@@ -7,6 +7,7 @@ socket.on("connect", newConnection);
 function newConnection() {
   console.log("your id:", socket.id);
 }
+//PROVA
 
 // Define which function should be called when a new message
 // comes from the server with type "mouseBroadcast"
