@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>SpitItOut! | Home</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <meta name="Resource-type" content="Document" />
+  <link rel="stylesheet" href="./assets/font/stylesheet.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="./style/website.css"  type="text/css">
+  <link rel="stylesheet" type="text/css" href="./dist/fullpage.css" />
+  <script src="./dist/p5.min.js"></script>
+  <script src="./dist/fullpage.js"></script>
+  <script src="./public/sketch.js"></script>
+  <!-- <script src="./public/Agent.js"></script> -->
+  <!-- <script src="./dist/p5.sound.min.js"></script>
+  <script src="./dist/p5.speech.js"></script> -->
+
+
+
+
+
+  <style>
+    body {
+      padding: 0;
+      margin: 0;
+      color: #ffffff;
+      text-align: center;
+    }
+
+    /* Centered texts in each section
+  	* --------------------------------------- */
+    .section {
+      text-align: center;
+    }
+
+    #fp-nav ul li a.active span,
+    .fp-slidesNav ul li a.active span,
+    #fp-nav ul li:hover a.active span,
+    .fp-slidesNav ul li:hover a.active span {
+      border-radius: 100%;
+      background: #ffffff;
+    }
+
+    #fp-nav ul li a span,
+    .fp-slidesNav ul li a span {
+      border-radius: 50%;
+      position: absolute;
+      z-index: 1;
+      height: 8px;
+      width: 8px;
+      border: 0;
+      background: rgba(255, 255, 255, 0.3);
+      left: 0%;
+      top: 50%;
+      margin: -4px 0 0 -4px;
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+    }
+
+    /* Fixed header and footer.
+  	* --------------------------------------- */
+    #header,
+    #footer {
+      position: fixed;
+      height: 10%;
+      display: block;
+      width: 100%;
+      background-color: transparent;
+      z-index: 9;
+      padding: 0 0 0 0;
+    }
+
+    #header {
+      top: 0px;
+    }
+
+    #footer {
+      bottom: 0px;
+      height: 5%;
+      background-color: transparent
+    }
+
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+
+
+
+
+  <div id="fullpage">
+    <div class="section" id="section0">
+      <div class="slide" id="slide1" data-anchor="slide1">
+        <div class="intro">
+          <div class="testoPanel">
+            <p> Follow the steps to <br>
+              <font face="typekaM">write in the diary!</font>
+            </p>
+          </div>
+          <a href="#firstPage/slide2"> <input id="arrowPanel"> </a>
+        </div>
+      </div>
+
+
+      <div class="slide" id="slide2" data-anchor="slide2">
+        <div class="intro">
+          <div class="testoPanel">
+            <p>How did you <font face="typekaM">feel</font> <br> during the <font face="typekaM">quarantine?</font>
+            </p>
+          </div>
+
+          <div class="slider">
+            <table width="80%" style="margin: 0 auto 0 auto">
+              <tr>
+                <td align="right" width="25%">SAD</td>
+                <td><img src="assets/image/01.1_SAD.png" height="30px"></td>
+                <td style="padding: 0 10px 0 10px"><input type="range" id="slider1" min="0" max="255" value="127.5"></td>
+                <td><img src="assets/image/01.2_HAPPY.png" height="30px"></td>
+                <td align="left" width="25%">HAPPY</td>
+              </tr>
+              <tr>
+                <td align="right" width="25%">ANGRY</td>
+                <td><img src="assets/image/02.1_ANGRY.png" height="30px"></td style="padding: 0 10px 0 10px">
+                <td><input type="range" id="slider2" min="0" max="255" value="127.5"></td>
+                <td><img src="assets/image/02.2_CALM.png" height="30px"></td>
+                <td align="left" width="25%">CALM</td>
+              </tr>
+              <tr>
+                <td align="right" width="25%">SCARED</td>
+                <td><img src="assets/image/03.1_SCARED.png" height="30px"></td style="padding: 0 10px 0 10px">
+                <td><input type="range" id="slider3" min="0" max="255" value="127.5"></td>
+                <td><img src="assets/image/03.2_CONFIDENT.png" height="30px"></td>
+                <td align="left" width="25%">CONFIDENT</td>
+              </tr>
+            </table>
+          </div>
+          <a href="#firstPage/slide3"> <input id="arrowPanel"> </a>
+        </div>
+      </div>
+
+      <div class="slide" id="slide3" data-anchor="slide3">
+        <div class="intro">
+          <div class="testoPanel">
+            <p>Click on the <font face="typekaM">mic</font> <br> and <font face="typekaM">Spit It Out!</font>
+            </p>
+          <!-- </div>
+          <div id="mic">
+          </div> -->
+          <div class="mic" id="micBtn" onmousedown="micGif()" onmouseup="micPng()">
+          </div>
+          <a href="#firstPage/slide4"> <input id="arrowPanel"> </a>
+        </div>
+      </div>
+
+      <div class="slide" id="slide4" data-anchor="slide4">
+        <div class="intro">
+          <div class="testoPanel">
+            <p>Are you <font face="typekaM">sure</font> <br>you want to <font face="typekaM">write</font> this<br>in the <font face="typekaM">diary?</font>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div id="footer">
+  </div>
+
+
+  <script type="text/javascript">
+    var myFullpage = new fullpage('#fullpage', {
+      anchors: ['firstPage'],
+      sectionsColor: ['#000000'],
+      navigation: false,
+      navigationPosition: 'right',
+      css3: true,
+      slidesNavigation: true,
+    });
+  </script>
+
+</body>
