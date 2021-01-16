@@ -157,9 +157,8 @@ input {
   display: inline-block;
   cursor: pointer;
   float: none;
-  margin: 0;
+  margin: 0 10px 0 0;
   padding: 0.5%;
-  padding-left: 15pt;
   width: 70pt;
   height: 10pt;
   background-repeat: no-repeat;
