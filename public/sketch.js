@@ -28,13 +28,12 @@ let vol2 = 1;
 
 //impostazioni firebase
 var readData = []; //read data container
+var texts;
 
 //inizio sketch
 var sketch = function(p) {
   var agents = [];
-  var init = 0;
   var agentCount = 0; // initial agents
-  var maxAgentCount = 10; // max agents
   var noiseScale = 500; // you can modify it to change the vorticity of the flux
   var noiseStrength = 10;
   var overlayAlpha = 0.04;
@@ -45,33 +44,7 @@ var sketch = function(p) {
   p.setup = function() {
     //FIREBASE SETTINGS
     database = firebase.database(); //start database
-    var texts = database.ref('texts'); //start collection
-    //write data
-    var data = { //crate user data
-      feelColour: 'rgb(0,0,255)',
-      sentence: 'example_sentence',
-      textFont: '15',
-    }
-    texts.push(data); //push user data to the firebase collection
-    //read data
-    texts.once("value", gotData)
-    function gotData(data) { //load data from server
-      var texts = data.val(); //The val() function returns an object.
-      var keys = Object.keys(texts); // Grab the keys to iterate over the object
-      for (var i = 0; i < keys.length; i++) { //for each object
-        var userText = texts[keys[i]]; //assign his data to var userText
-        readData.push(userText) //push user data to the readData container
-      }
-    }
-    texts.on("value", updateData); //The “value” event is triggered when changes are made to the database
-    function updateData(data) { //update text list
-      var texts = data.val();
-      var keys = Object.keys(texts);
-      for (var i = keys.length - 1; i < keys.length; i++) { //select last object
-        var userText = texts[keys[i]];
-        readData.push(userText) //push user data to the readData container
-      }
-    }
+    texts = database.ref('texts'); //start collection
     //END FIREBASE SETTINGS
 
     p.createCanvas(p.windowWidth, p.windowHeight);
@@ -84,12 +57,30 @@ var sketch = function(p) {
     b1.mousePressed(listener);
     b1.id('startBtn');
 
-    p.colorMode(p.HSB, 360, 100, 100); //colorMode(mode, max1, max2, max3, [maxA])
+    p.colorMode(p.RGB, 240, 240, 240); //colorMode(mode, max1, max2, max3, [maxA])
     p.textFont(font, fontSizeMin);
 
-    //togliere le seguenti tre righe se si vuole inserire tutti gli agents cliccando
-    for (var i = 0; i < agentCount; i++) { //così ci sono già di default #agentCount agents
-      agents[i] = new Agent(p.random(p.width), p.random(p.height), p.color(p.random(360), 80, 60), letters, vol_map);
+    //load data from storage
+    texts.once("value", gotData)
+    function gotData(data) { //load data from server
+      var texts = data.val(); //The val() function returns an object.
+      var keys = Object.keys(texts); // Grab the keys to iterate over the object
+      agentCount=keys.length;
+      for (var i = 0; i < keys.length; i++) { //for each object
+        var userText = texts[keys[i]]; //assign his data to var userText
+        agents[i] = new Agent(userText.xPos, userText.yPos, p.color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_map);
+      }
+    }
+
+    texts.on("value", updateData); //The “value” event is triggered when changes are made to the database
+    function updateData(data) { //update text list
+      var texts = data.val();
+      var keys = Object.keys(texts);
+      agentCount=keys.length;
+      for (var i = keys.length - 1; i < keys.length; i++) { //select last object
+        var userText = texts[keys[i]];
+        agents[i] = new Agent(userText.xPos, userText.yPos, p.color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_map);
+      }
     }
 
   };
@@ -113,12 +104,11 @@ var sketch = function(p) {
     p.rect(0, 0, p.width, p.height);
 
     // Draw agents
-    if (agentCount > maxAgentCount) {
-      init = agentCount - maxAgentCount;
-    }
-    for (var i = init; i < agentCount; i++) {
+    for (var i = 0; i < agentCount; i++) {
       agents[i].update(noiseScale, noiseStrength, strokeWidth);
     }
+
+
   } //fine draw;
 
   p.keyReleased = function() {
@@ -131,28 +121,37 @@ var sketch = function(p) {
   };
 
   p.mouseClicked = function() {
-    agentCount++;
-    //console.log(agentCount + " agents");
-    agents[agentCount - 1] = new Agent(p.mouseX, p.mouseY, p.color(p.random(360), 80, 60), letters, vol_map);
+    agents[agentCount] = new Agent(p.mouseX, p.mouseY, p.color(p.random(240), 80, 60), letters, vol_map);
     if (p.getAudioContext().state !== 'running') {
       p.getAudioContext().resume();
     }
+    //write data
+    var data = { //crate user data
+      xPos: p.mouseX,
+      yPos: p.mouseY,
+      rCol:p.random(240),
+      gCol:80,
+      bCol:60,
+      letters: letters,
+      vol_map: vol_map
+    }
+    texts.push(data); //push user data to the firebase collection
   }
 
   p.windowResized = function() {
     p.resizeCanvas(p.windowWidth, p.windowHeight);
   }
 
-  listener = function() {
-    let continuous = true; //continua a registrare
-    let interim = false;
-    speechRec.start(continuous, interim);
-    console.log("listening");
-  }
-
 }; //fine sketch
 
 var myp5 = new p5(sketch);
+
+function listener(){
+  let continuous = true; //continua a registrare
+  let interim = false;
+  speechRec.start(continuous, interim);
+  console.log("listening");
+}
 
 function gotSpeech() {
   if (speechRec.resultValue) {
@@ -164,7 +163,7 @@ function gotSpeech() {
 
 function micGif() {
   document.getElementById('micBtn').style.backgroundImage = "url('../assets/image/04.2_Mic.gif')";
-  myp5.listener()
+  listener()
 }
 
 function micPng() {
