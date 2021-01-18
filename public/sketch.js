@@ -26,6 +26,10 @@ let speechRec = new p5.SpeechRec(lang, gotSpeech);
 let vol_map;
 let vol2 = 1;
 
+//impostazioni firebase
+var readData = []; //read data container
+
+//inizio sketch
 var sketch = function(p) {
   var agents = [];
   var init = 0;
@@ -40,25 +44,33 @@ var sketch = function(p) {
 
   p.setup = function() {
     //FIREBASE SETTINGS
-    var database = firebase.database(); //start database
+    database = firebase.database(); //start database
     var texts = database.ref('texts'); //start collection
     //write data
     var data = { //crate user data
       feelColour: 'rgb(0,0,255)',
       sentence: 'example_sentence',
+      textFont: '15',
     }
     texts.push(data); //push user data to the firebase collection
     //read data
-    texts.on("value", gotData); //The “value” event is triggered when changes are made to the database
-    var readData = []; //read data container
-    function gotData(data) {
+    texts.once("value", gotData)
+    function gotData(data) { //load data from server
       var texts = data.val(); //The val() function returns an object.
       var keys = Object.keys(texts); // Grab the keys to iterate over the object
-      for (var i = keys.length - 1; i < keys.length; i++) { //select last object
+      for (var i = 0; i < keys.length; i++) { //for each object
         var userText = texts[keys[i]]; //assign his data to var userText
         readData.push(userText) //push user data to the readData container
       }
-      console.log(readData);
+    }
+    texts.on("value", updateData); //The “value” event is triggered when changes are made to the database
+    function updateData(data) { //update text list
+      var texts = data.val();
+      var keys = Object.keys(texts);
+      for (var i = keys.length - 1; i < keys.length; i++) { //select last object
+        var userText = texts[keys[i]];
+        readData.push(userText) //push user data to the readData container
+      }
     }
     //END FIREBASE SETTINGS
 
