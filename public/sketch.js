@@ -112,6 +112,7 @@ listener = function(){
   let continuous = true; //continua a registrare
   let interim = false;
   speechRec.start(continuous, interim);
+  console.log("listening");
 }
 
 }; //fine sketch
@@ -128,7 +129,7 @@ function gotSpeech() {
 
 function micGif(){
 document.getElementById('micBtn').style.backgroundImage="url('../assets/image/04.2_Mic.gif')";
-// myp5.listener()
+myp5.listener()
 }
 
 function micPng(){
