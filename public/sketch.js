@@ -38,7 +38,7 @@ var sketch = function(p) {
   var maxAgentCount = 10; // max agents
   var noiseScale = 500; // you can modify it to change the vorticity of the flux
   var noiseStrength = 10;
-  // var overlayAlpha = 0.04;
+  var overlayAlpha = 10;
   //var agentAlpha = 10;
   var strokeWidth = 0.3;
 
@@ -161,6 +161,7 @@ function gotSpeech() {
     let text = speechRec.resultString;
     letters = text + ' ';
     console.log(speechRec.resultString)
+    console.log("sono nella funzione gotspeech");
   }
 }
 
