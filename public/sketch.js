@@ -33,10 +33,12 @@ var texts;
 //inizio sketch
 var sketch = function(p) {
   var agents = [];
+  var init = 0;
   var agentCount = 0; // initial agents
+  var maxAgentCount = 10; // max agents
   var noiseScale = 500; // you can modify it to change the vorticity of the flux
   var noiseStrength = 10;
-  var overlayAlpha = 0.04;
+  // var overlayAlpha = 0.04;
   //var agentAlpha = 10;
   var strokeWidth = 0.3;
 
@@ -52,20 +54,21 @@ var sketch = function(p) {
     mic = new p5.AudioIn();
     mic.start();
 
+    p.colorMode(p.RGB, 240, 240, 240); //colorMode(mode, max1, max2, max3, [maxA])
+    p.textFont(font, fontSizeMin);
+
     b1 = p.createButton('microfono');
     b1.position(p.width / 2 * 1.7, p.height / 2 * 0.1);
     b1.mousePressed(listener);
     b1.id('startBtn');
 
-    p.colorMode(p.RGB, 240, 240, 240); //colorMode(mode, max1, max2, max3, [maxA])
-    p.textFont(font, fontSizeMin);
-
     //load data from storage
     texts.once("value", gotData)
+
     function gotData(data) { //load data from server
       var texts = data.val(); //The val() function returns an object.
       var keys = Object.keys(texts); // Grab the keys to iterate over the object
-      agentCount=keys.length;
+      agentCount = keys.length;
       for (var i = 0; i < keys.length; i++) { //for each object
         var userText = texts[keys[i]]; //assign his data to var userText
         agents[i] = new Agent(userText.xPos, userText.yPos, p.color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_map);
@@ -76,7 +79,7 @@ var sketch = function(p) {
     function updateData(data) { //update text list
       var texts = data.val();
       var keys = Object.keys(texts);
-      agentCount=keys.length;
+      agentCount = keys.length;
       for (var i = keys.length - 1; i < keys.length; i++) { //select last object
         var userText = texts[keys[i]];
         agents[i] = new Agent(userText.xPos, userText.yPos, p.color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_map);
@@ -92,6 +95,7 @@ var sketch = function(p) {
     vol_map = p.map(vol, 0, 1, 1, 150);
     console.log("volume " + vol_map);
 
+
     if (p.getAudioContext().state !== 'running') {
       p.text('non funziona audio', p.width / 2, p.height / 2);
     } else {
@@ -99,7 +103,7 @@ var sketch = function(p) {
     }
 
 
-    p.fill(255, overlayAlpha);
+    p.fill('rgba(255,255,255, 0.05)');
     p.noStroke();
     p.rect(0, 0, p.width, p.height);
 
@@ -107,7 +111,6 @@ var sketch = function(p) {
     for (var i = 0; i < agentCount; i++) {
       agents[i].update(noiseScale, noiseStrength, strokeWidth);
     }
-
 
   } //fine draw;
 
@@ -129,9 +132,9 @@ var sketch = function(p) {
     var data = { //crate user data
       xPos: p.mouseX,
       yPos: p.mouseY,
-      rCol:p.random(240),
-      gCol:80,
-      bCol:60,
+      rCol: p.random(240),
+      gCol: 80,
+      bCol: 60,
       letters: letters,
       vol_map: vol_map
     }
@@ -146,7 +149,7 @@ var sketch = function(p) {
 
 var myp5 = new p5(sketch);
 
-function listener(){
+function listener() {
   let continuous = true; //continua a registrare
   let interim = false;
   speechRec.start(continuous, interim);
@@ -163,7 +166,7 @@ function gotSpeech() {
 
 function micGif() {
   document.getElementById('micBtn').style.backgroundImage = "url('../assets/image/04.2_Mic.gif')";
-  listener()
+  // listener()
 }
 
 function micPng() {

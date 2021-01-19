@@ -1,4 +1,3 @@
-
 var font = 'Georgia';
 var fontSizeMin = 4;
 let mic, vol, vol_1; //Volume per dimensione lettere
