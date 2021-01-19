@@ -10,7 +10,6 @@
  *
  */
 
-
 var x = 0;
 var y = 0;
 var stepSize = 0.01;
@@ -30,6 +29,9 @@ let vol2 = 1;
 var readData = []; //read data container
 var texts;
 
+//variabile globale slider
+var slider1Val=100
+
 //inizio sketch
 var sketch = function(p) {
   var agents = [];
@@ -38,7 +40,7 @@ var sketch = function(p) {
   var maxAgentCount = 10; // max agents
   var noiseScale = 500; // you can modify it to change the vorticity of the flux
   var noiseStrength = 10;
-  var overlayAlpha = 10;
+  // var overlayAlpha = 10;
   //var agentAlpha = 10;
   var strokeWidth = 0.3;
 
@@ -88,12 +90,14 @@ var sketch = function(p) {
 
   };
 
+
   p.draw = function() {
+    console.log("draw "+slider1Val)//non funziona
     p.frameRate(9); // questo per far brutalmente rallentare le scritte
     // //volume
     vol = p.round(mic.getLevel(), 2);
     vol_map = p.map(vol, 0, 1, 1, 150);
-    console.log("volume " + vol_map);
+    // console.log("volume " + vol_map);
 
 
     if (p.getAudioContext().state !== 'running') {
@@ -128,6 +132,7 @@ var sketch = function(p) {
     if (p.getAudioContext().state !== 'running') {
       p.getAudioContext().resume();
     }
+
     //write data
     var data = { //crate user data
       xPos: p.mouseX,
@@ -168,6 +173,11 @@ function gotSpeech() {
 function micGif() {
   document.getElementById('micBtn').style.backgroundImage = "url('../assets/image/04.2_Mic.gif')";
   // listener()
+}
+
+function getSlider(){
+  slider1Val=document.getElementById('slider1').value
+  console.log("fuori p5 "+slider1Val) //funziona
 }
 
 function micPng() {
