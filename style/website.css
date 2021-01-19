@@ -39,7 +39,6 @@ body {
   background-repeat: no-repeat;
   background-size: contain;
   z-index: 1;
-  transform: rotateX(-180deg);
 }
 
 .voci2 {
@@ -225,20 +224,28 @@ button:active {
   transform: translateY(+5px)
 }
 
-#arrowPanel1, #arrowPanel2, #arrowPanel3 {
+#arrowPanel1, #arrowPanel2, #arrowPanel3, #arrowPanel4 {
   position: absolute;
   margin: 0;
   padding: 0;
   top: auto;
-  bottom:20%;
+  bottom:10%;
   height: 25px;
   width: 25px;
   background-image: url("../assets/image/07.1_freccia navigazione ferma b.png");
   transform: translateX(-50%);
 }
 
-#arrowPanel1:hover, #arrowPanel2:hover, #arrowPanel3:hover{
+#arrowPanel4 {
+  transform: rotate(+90deg) translateY(30%) translateX(10%) ;
+}
+
+#arrowPanel1:hover, #arrowPanel2:hover, #arrowPanel3:hover, #arrowPanel4:hover{
   transform: translateX(-30%);
+}
+
+#arrowPanel4:hover {
+  transform: rotate(+90deg) translateY(30%) translateX(25%);
 }
 
 
@@ -292,13 +299,13 @@ button:active {
 
 .canvas{
   position: absolute;
-  margin: 0;
+  margin: 0 0 0 0;
   left: 0;
   top: 10%;
   height: 85%;
   width: 100%;
   border: none;
-  outline:none
+  outline:none;
 }
 
 #imgBt3{
@@ -313,7 +320,7 @@ button:active {
 #imgBt4{
   position: absolute;
   margin: 0;
-  bottom: 70%;
+  bottom: 69%;
   width: 10px;
   right: 6%;
   color: #ffffff;
@@ -382,4 +389,5 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  cursor: pointer
 }

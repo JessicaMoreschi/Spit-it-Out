@@ -3453,8 +3453,8 @@
             var msgStyle = 'font-size: 15px;background:yellow;';
 
             if(!isOK){
-                showError('error', 'Fullpage.js version 3 has changed its license to GPLv3 and it requires a `licenseKey` option. Read about it here:');
-                showError('error', 'https://github.com/alvarotrigo/fullPage.js#options.');
+                // showError('error', 'Fullpage.js version 3 has changed its license to GPLv3 and it requires a `licenseKey` option. Read about it here:');
+                // showError('error', 'https://github.com/alvarotrigo/fullPage.js#options.');
             }
             else if(l && l.length < 20){
                 console.warn('%c This website was made using fullPage.js slider. More info on the following website:', msgStyle);
@@ -3643,9 +3643,9 @@
     /**
     * Shows a message in the console of the given type.
     */
-    function showError(type, text){
-        window.console && window.console[type] && window.console[type]('fullPage: ' + text);
-    }
+    // function showError(type, text){
+    //     window.console && window.console[type] && window.console[type]('fullPage: ' + text);
+    // }
 
     /**
     * Equivalent of jQuery function $().
@@ -4210,7 +4210,7 @@
         untilAll: untilAll,
         nextAll: nextAll,
         prevAll: prevAll,
-        showError: showError
+        // showError: showError
     };
 
     return initialise;
