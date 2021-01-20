@@ -73,7 +73,7 @@ function draw() {
   // //volume
   vol = round(mic.getLevel(), 2);
   vol_map = map(vol, 0, 1, 10, 200);
-  // console.log("volume " + vol_map);
+   console.log("volume " + vol_map);
 
   // if (getAudioContext().state !== 'running') {
   //   text('non funziona audio', width / 2, height / 2);
@@ -152,7 +152,7 @@ function writeOnCanvas() {
 function startMic() {
   vol_zero = vol_map;
   console.log("listening");
-  mic.start();
+  // mic.start();
   let continuous = false; //continua a registrare
   let interim = false;
   spoke = true;
