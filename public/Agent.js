@@ -21,7 +21,7 @@ class Agent{
     fill(this.col)
     var d = 0;
     this.pos = this.nextPos.copy();
-    textSize(max(fontSizeMin*this.vol, d));
+    textSize(max(this.vol, d)); //fontSizeMin*
 
     while(d <= textWidth(newLetter)){ //questo ciclo while serve a trovare la giusta nextPos
     this.angle = noise(this.nextPos.x / noiseScale , this.nextPos.y / noiseScale) * noiseStrength;
