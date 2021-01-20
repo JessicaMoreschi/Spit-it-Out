@@ -61,6 +61,8 @@ function setup() {
 
   mycanvas.mousePressed(writeOnCanvas);
 
+  document.getElementById('panel').contentWindow.document.getElementById('arrowPanel4').addEventListener('click', closePanel)//chiudi pannello
+
 }; //fine setup
 
 
@@ -130,6 +132,9 @@ function writeOnCanvas() {
   }
   texts.push(data); //push user data to the firebase collection
   spoke = false;
+  let phrase=document.getElementById('panel').contentWindow.document.getElementById('phrase');
+  phrase.innerHTML=""
+  phrase.style.padding= '0 0 0 0';
   }
 }
 
@@ -151,6 +156,9 @@ function gotSpeech() {
   if (speechRec.resultValue) {
     let text = speechRec.resultString;
     letters = text + ' ';
+    let phrase=document.getElementById('panel').contentWindow.document.getElementById('phrase');
+    phrase.innerHTML="' "+speechRec.resultString+" '"
+    phrase.style.padding= '0 20px 20px 20px';
     console.log(speechRec.resultString)
     console.log("sono nella funzione gotspeech");
   }
@@ -167,4 +175,12 @@ function keyReleased() {
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight / 100 * 85);
+}
+
+function closePanel(){
+  parent.document.getElementById('panel').contentWindow.document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-03-03.png');
+  parent.document.getElementById('panel').style.display = 'none';
+  parent.document.getElementById('imgBt4').style.display = 'none';
+  parent.document.getElementById('panel').src = "panel.html";
+  location.reload()
 }

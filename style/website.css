@@ -379,7 +379,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 .slider, .mic{
   width: 90%;
   height: 100px;
-  margin: 0 auto 50px auto;
+  margin: 0 auto 20px auto;
   font-family:'typekaM';
   font-size: 8pt;
 }
@@ -389,5 +389,14 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  cursor: pointer
+  margin: 10px auto 5px auto;
+  cursor: pointer;
+}
+
+.phrase{
+  width: auto;
+  height: 30%;
+  margin: 0 auto 20px auto;
+  font-family:'typekaM';
+  font-size: 8pt;
 }
