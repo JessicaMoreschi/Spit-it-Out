@@ -103,7 +103,7 @@
 
   <div id="header">
     <div class="header">
-      <a href="index.html#firstPage" class="header" height="15px"><img id="logo" src="./assets/image/07.2_freccia navigazione.gif"></a>
+      <a href="index.html#firstPage" class="header" id="logo"><img width="100%" src="./assets/image/logoExtended.png"></a>
       <a href="./public/diary.html" class="voci2">
         <input class="voci2" id="iconDiary">
         <p class="voci2" id="diary">Diary</p>
@@ -147,9 +147,9 @@
               </p>
             </div>
             <div id="testoDx">
-              <p id="testo1">With this website you’ll be able to record your true emotions
-                and deep feelings in order to create a beautiful artwork in
-                <font face="typekaM" id="collaboration">collaboration</font> with people around the world.
+              <p id="testo1">With this website you’ll be able to <font face="typekaM" id="record">record</font> your true emotions
+                and deep feelings in order to create a beautiful artwork
+                <font face="typekaM" id="collaboration">collaborating</font> with people around the world.
                 <br> Oh, and remember: this is a <font face="typekaM" id="secret">secret diary</font>, so your identity
                 will be hidden to other users…
                 <font face="typekaM" id="Feel">Feel free</font> to say what you really think, let’s start!
@@ -279,8 +279,15 @@
         deleteSpeed: 5,
         pauseFor: 100000
       });
+      new Typewriter('#record', {
+        strings: ['record'],
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 5,
+        pauseFor: 100000
+      });
       new Typewriter('#collaboration', {
-        strings: ['collaboration'],
+        strings: ['collaborating'],
         autoStart: true,
         loop: true,
         deleteSpeed: 5,

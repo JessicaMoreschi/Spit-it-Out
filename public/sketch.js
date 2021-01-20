@@ -56,13 +56,13 @@ function setup() {
   texts.once("value", gotData);
   texts.on("value", updateData); //The “value” event is triggered when changes are made to the database
 
-  var micBtn=document.getElementById('panel').contentWindow.document.getElementById('micBtn');
+  var micBtn = document.getElementById('panel').contentWindow.document.getElementById('micBtn');
   micBtn.addEventListener('mousedown', startMic);
   micBtn.addEventListener('mouseup', stopMic);
 
   mycanvas.mousePressed(writeOnCanvas);
 
-  document.getElementById('panel').contentWindow.document.getElementById('arrowPanel4').addEventListener('click', closePanel)//chiudi pannello
+  document.getElementById('panel').contentWindow.document.getElementById('arrowPanel4').addEventListener('click', closePanel) //chiudi pannello
 
 }; //fine setup
 
@@ -120,30 +120,30 @@ function updateData(data) { //update text list
 
 
 function writeOnCanvas() {
-  if (spoke==true) {
-  var rCol=document.getElementById('panel').contentWindow.document.getElementById('slider1').value
-  var gCol=document.getElementById('panel').contentWindow.document.getElementById('slider2').value
-  var bCol=document.getElementById('panel').contentWindow.document.getElementById('slider3').value
+  if (spoke == true) {
+    var rCol = document.getElementById('panel').contentWindow.document.getElementById('slider1').value
+    var gCol = document.getElementById('panel').contentWindow.document.getElementById('slider2').value
+    var bCol = document.getElementById('panel').contentWindow.document.getElementById('slider3').value
 
-  agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_text);
-  if (getAudioContext().state !== 'running') {
-    getAudioContext().resume();
-  }
-  //write data
-  var data = { //crate user data
-    xPos: mouseX,
-    yPos: mouseY,
-    rCol: rCol,
-    gCol: gCol,
-    bCol: bCol,
-    letters: letters,
-    vol_map: vol_text
-  }
-  texts.push(data); //push user data to the firebase collection
-  spoke = false;
-  let phrase=document.getElementById('panel').contentWindow.document.getElementById('phrase');
-  phrase.innerHTML=""
-  phrase.style.padding= '0 0 0 0';
+    agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_map);
+    if (getAudioContext().state !== 'running') {
+      getAudioContext().resume();
+    }
+    //write data
+    var data = { //crate user data
+      xPos: mouseX,
+      yPos: mouseY,
+      rCol: rCol,
+      gCol: gCol,
+      bCol: bCol,
+      letters: letters,
+      vol_map: vol_map
+    }
+    texts.push(data); //push user data to the firebase collection
+    spoke = false;
+    let phrase = document.getElementById('panel').contentWindow.document.getElementById('phrase');
+    phrase.innerHTML = ""
+    phrase.style.padding = '0 0 0 0';
   }
   parent.document.getElementById('panel').style.display = 'none';
 }
@@ -170,9 +170,9 @@ function gotSpeech() {
   if (speechRec.resultValue) {
     let text = speechRec.resultString;
     letters = text + ' ';
-    let phrase=document.getElementById('panel').contentWindow.document.getElementById('phrase');
-    phrase.innerHTML="' "+speechRec.resultString+" '"
-    phrase.style.padding= '0 20px 20px 20px';
+    let phrase = document.getElementById('panel').contentWindow.document.getElementById('phrase');
+    phrase.innerHTML = "' " + speechRec.resultString + " '"
+    phrase.style.padding = '0 20px 20px 20px';
     console.log(speechRec.resultString)
     console.log("sono nella funzione gotspeech");
   }
@@ -191,7 +191,7 @@ function windowResized() {
   resizeCanvas(windowWidth, windowHeight / 100 * 85);
 }
 
-function closePanel(){
+function closePanel() {
   parent.document.getElementById('panel').contentWindow.document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-03-03.png');
   parent.document.getElementById('panel').style.display = 'none';
   location.reload()
