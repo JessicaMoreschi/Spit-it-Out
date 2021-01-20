@@ -23,6 +23,7 @@ var noiseScale = 500; // you can modify it to change the vorticity of the flux
 var noiseStrength = 10;
 var strokeWidth = 0.3;
 var fontSizeMin = 14;
+var overlayAlpha = 12; //quanto spariscono le scritte (scala 0-255)
 
 //impostazioni riconoscimento vocale //
 var speechRec;
@@ -81,17 +82,18 @@ function draw() {
   //   text('audio abilitato', width / 2, height / 2);
   // }
 
-  // console.log("vol0 " + vol_zero);
-  // console.log("vol_text " + vol_text);
+  //console.log("vol0 " + vol_zero);
+  console.log("vol_text " + vol_text);
   if (vol_map > vol_zero+8){
     vol_text = vol_map;
     vol_zero =undefined;
-     console.log("vol_map > vol_zero")
+     console.log("vol_map > vol_zero !!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
   }
 
-  fill('rgba(255,255,255, 0.05)');
+  //fill('rgba(255,255,255, overlayAlpha)');
   noStroke();
-  rect(0, 0, width, height);
+  fill(255, overlayAlpha)
+  rect(0, 0, width, height, overlayAlpha);
 
   // Draw agents
   for (var i = 0; i < agentCount; i++) {
@@ -105,7 +107,7 @@ function gotData(data) { //load data from server
   agentCount = keys.length;
   for (var i = 0; i < keys.length; i++) { //for each object
     var userText = texts[keys[i]]; //assign his data to var userText
-    agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_map);
+    agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_text);
   }
 }
 
@@ -115,7 +117,7 @@ function updateData(data) { //update text list
   agentCount = keys.length;
   for (var i = keys.length - 1; i < keys.length; i++) { //select last object
     var userText = texts[keys[i]];
-    agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_map);
+    agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_text);
   }
 }
 
@@ -126,7 +128,7 @@ function writeOnCanvas() {
   var gCol=document.getElementById('panel').contentWindow.document.getElementById('slider2').value
   var bCol=document.getElementById('panel').contentWindow.document.getElementById('slider3').value
 
-  agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_map);
+  agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_text);
   if (getAudioContext().state !== 'running') {
     getAudioContext().resume();
   }
@@ -138,7 +140,7 @@ function writeOnCanvas() {
     gCol: gCol,
     bCol: bCol,
     letters: letters,
-    vol_map: vol_map
+    vol_text: vol_text
   }
   texts.push(data); //push user data to the firebase collection
   spoke = false;
