@@ -30,7 +30,8 @@ var lang = 'en-US'; //|| 'it-IT'
 var vol_map;
 var vol2 = 1;
 var spoke = false;
-
+var vol_zero;
+var vol_text=4;
 
 //impostazioni firebase
 var readData = []; //read data container
@@ -46,6 +47,7 @@ function setup() {
 
   speechRec = new p5.SpeechRec(lang, gotSpeech);
   mic = new p5.AudioIn();
+  mic.start();
 
   colorMode(RGB, 150, 150, 150); //colorMode(mode, max1, max2, max3, [maxA])
   textFont(font, fontSizeMin);
@@ -66,17 +68,25 @@ function setup() {
 
 
 function draw() {
-  frameRate(9); // questo per far brutalmente rallentare le scritte
+  frameRate(3); // questo per far brutalmente rallentare le scritte
   // //volume
   vol = round(mic.getLevel(), 2);
-  vol_map = map(vol, 0, 1, 1, 150);
-  // console.log("volume " + vol_map);
+  vol_map = map(vol, 0, 1, 1, 200);
+  console.log("volume " + vol_map);
 
   // if (getAudioContext().state !== 'running') {
   //   text('non funziona audio', width / 2, height / 2);
   // } else {
   //   text('audio abilitato', width / 2, height / 2);
   // }
+
+  // console.log("vol0 " + vol_zero);
+  // console.log("vol_text " + vol_text);
+  if (vol_map > vol_zero+8){
+    vol_text = vol_map;
+    vol_zero =undefined;
+     console.log("vol_map > vol_zero")
+  }
 
   fill('rgba(255,255,255, 0.05)');
   noStroke();
@@ -115,7 +125,7 @@ function writeOnCanvas() {
   var gCol=document.getElementById('panel').contentWindow.document.getElementById('slider2').value
   var bCol=document.getElementById('panel').contentWindow.document.getElementById('slider3').value
 
-  agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_map);
+  agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_text);
   if (getAudioContext().state !== 'running') {
     getAudioContext().resume();
   }
@@ -127,7 +137,7 @@ function writeOnCanvas() {
     gCol: gCol,
     bCol: bCol,
     letters: letters,
-    vol_map: vol_map
+    vol_map: vol_text
   }
   texts.push(data); //push user data to the firebase collection
   spoke = false;
@@ -139,8 +149,9 @@ function writeOnCanvas() {
 }
 
 function startMic() {
+  vol_zero = vol_map;
   console.log("listening");
-  mic.start();
+  // mic.start();
   let continuous = false; //continua a registrare
   let interim = false;
   spoke = true;
@@ -149,7 +160,8 @@ function startMic() {
 }
 
 function stopMic() {
-  mic.stop();
+  // mic.stop();
+  speechRec.stop();
   document.getElementById('panel').contentWindow.document.getElementById('micBtn').style.backgroundImage = "url('../assets/image/04.1_Mic fermo.png')"
   console.log("stop")
 }
