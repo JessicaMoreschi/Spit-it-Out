@@ -397,6 +397,6 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   width: auto;
   height: 30%;
   margin: 0 auto 20px auto;
-  font-family:'typekaM';
-  font-size: 8pt;
+  font-family:'typekaR';
+  font-size: 10pt;
 }

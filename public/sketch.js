@@ -136,6 +136,7 @@ function writeOnCanvas() {
   phrase.innerHTML=""
   phrase.style.padding= '0 0 0 0';
   }
+  parent.document.getElementById('panel').style.display = 'none';
 }
 
 function startMic() {
@@ -180,7 +181,5 @@ function windowResized() {
 function closePanel(){
   parent.document.getElementById('panel').contentWindow.document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-03-03.png');
   parent.document.getElementById('panel').style.display = 'none';
-  parent.document.getElementById('imgBt4').style.display = 'none';
-  parent.document.getElementById('panel').src = "panel.html";
   location.reload()
 }
