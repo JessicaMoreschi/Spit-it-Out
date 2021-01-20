@@ -1,4 +1,4 @@
-![Header](assets/logo/Logo_ext2.png)
+<img src="assets/logo/Logo_ext2.png" width="300" />
 
 ### Team members:
 
