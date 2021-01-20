@@ -3,7 +3,6 @@
 </p>
 
 ### Team members:
-
 -  Brambilla Chiara
 -  Crippa Alessandra
 -  Moreschi Jessica
@@ -50,7 +49,24 @@ Here I have to write which sites/behance projects have been useful in order to c
 
 ### Visual identity
 
-Consequences of the inspirations research. (logos, palette, fonts, texture, animations)
+## Logo
+The logo is composed of two aspects: the title of the site (Spit It Out) and a stylized megaphone, who
+represents the voice (a key element of the experience). Another characteristic is the texture applied
+on the logo, who gives a hand drawn look.
+<p align="center">
+ <img src="assets/logo/Logo_ext.png" width="700"/>
+</p>
+
+There are also two alternatives of the logo, one without textures and one more "shortened" with only 
+the initial letters S.I.O.
+
+## Palette and textures
+The color palette is very simple, composed by only two main colors (black and white) which resembles ink
+and paper. The two textures too were selected to remember paper and ink.
+
+<p align="center">
+ <img src="assets/readme/Palette.png" width="800"/>
+</p>
 
 ### UX
 
