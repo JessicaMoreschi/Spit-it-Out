@@ -32,8 +32,9 @@ body {
 
 
 #logo {
-  width: 6%;
+  width: 70px;
   height: auto;
+  max-height: 50px;
   margin: auto;
   margin-left: 5%;
   border: none;

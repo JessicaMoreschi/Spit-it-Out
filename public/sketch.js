@@ -33,6 +33,7 @@ var spoke = false;
 var vol_zero;
 var vol_text=4;
 
+
 //impostazioni firebase
 var readData = []; //read data container
 var texts;
@@ -72,7 +73,7 @@ function draw() {
   // //volume
   vol = round(mic.getLevel(), 2);
   vol_map = map(vol, 0, 1, 1, 200);
-  console.log("volume " + vol_map);
+  // console.log("volume " + vol_map);
 
   // if (getAudioContext().state !== 'running') {
   //   text('non funziona audio', width / 2, height / 2);
@@ -120,30 +121,30 @@ function updateData(data) { //update text list
 
 
 function writeOnCanvas() {
-  if (spoke == true) {
-    var rCol = document.getElementById('panel').contentWindow.document.getElementById('slider1').value
-    var gCol = document.getElementById('panel').contentWindow.document.getElementById('slider2').value
-    var bCol = document.getElementById('panel').contentWindow.document.getElementById('slider3').value
+  if (spoke==true) {
+  var rCol=document.getElementById('panel').contentWindow.document.getElementById('slider1').value
+  var gCol=document.getElementById('panel').contentWindow.document.getElementById('slider2').value
+  var bCol=document.getElementById('panel').contentWindow.document.getElementById('slider3').value
 
-    agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_map);
-    if (getAudioContext().state !== 'running') {
-      getAudioContext().resume();
-    }
-    //write data
-    var data = { //crate user data
-      xPos: mouseX,
-      yPos: mouseY,
-      rCol: rCol,
-      gCol: gCol,
-      bCol: bCol,
-      letters: letters,
-      vol_map: vol_map
-    }
-    texts.push(data); //push user data to the firebase collection
-    spoke = false;
-    let phrase = document.getElementById('panel').contentWindow.document.getElementById('phrase');
-    phrase.innerHTML = ""
-    phrase.style.padding = '0 0 0 0';
+  agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_map);
+  if (getAudioContext().state !== 'running') {
+    getAudioContext().resume();
+  }
+  //write data
+  var data = { //crate user data
+    xPos: mouseX,
+    yPos: mouseY,
+    rCol: rCol,
+    gCol: gCol,
+    bCol: bCol,
+    letters: letters,
+    vol_map: vol_map
+  }
+  texts.push(data); //push user data to the firebase collection
+  spoke = false;
+  let phrase=document.getElementById('panel').contentWindow.document.getElementById('phrase');
+  phrase.innerHTML=""
+  phrase.style.padding= '0 0 0 0';
   }
   parent.document.getElementById('panel').style.display = 'none';
 }
@@ -151,7 +152,7 @@ function writeOnCanvas() {
 function startMic() {
   vol_zero = vol_map;
   console.log("listening");
-  // mic.start();
+  mic.start();
   let continuous = false; //continua a registrare
   let interim = false;
   spoke = true;
@@ -160,8 +161,7 @@ function startMic() {
 }
 
 function stopMic() {
-  // mic.stop();
-  speechRec.stop();
+  // speechRec.stop();
   document.getElementById('panel').contentWindow.document.getElementById('micBtn').style.backgroundImage = "url('../assets/image/04.1_Mic fermo.png')"
   console.log("stop")
 }
