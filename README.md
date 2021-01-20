@@ -1,4 +1,6 @@
-<img src="assets/logo/Logo_ext2.png" width="300" />
+<p align="center">
+  <img src="assets/logo/Logo_ext2.png" width="300" />
+</p>
 
 ### Team members:
 
