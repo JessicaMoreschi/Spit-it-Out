@@ -24,14 +24,14 @@ We present you... **Spit It Out!**
 "Spit It Out" is phrase used to incentive to say what you are really thinking (in italian
 can be translated as “sputa il rospo”, “sputalo fuori”).
 
-Spit It Out is a common space that presents a collaborative canvas: people will create a masterpiece
+Spit It Out is a common space that presents a diary as collaborative canvas: people will create a masterpiece
 of “words traces”. Step by step, the site will ask some questions to the user (useful to determine
 color and thickness of the trace) in order to generate a “river of words”. The final result
 it’s an artwork in which all the bad and good feelings dance together.
 
 The aim of the project is giving voice to deep feelings, whatever they are. Together will
 create an amazing and unpredictable artwork that will be shaped by the interaction of each
-user. The Final result will be exposed in a an online exhibition.
+user.
 
 The entire experience is designed to work on computer and the microphone, as we'll see, it's
 the most important and useful device .
