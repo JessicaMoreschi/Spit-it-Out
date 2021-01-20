@@ -69,10 +69,10 @@ function setup() {
 
 
 function draw() {
-  frameRate(3); // questo per far brutalmente rallentare le scritte
+  frameRate(9); // questo per far brutalmente rallentare le scritte
   // //volume
   vol = round(mic.getLevel(), 2);
-  vol_map = map(vol, 0, 1, 1, 200);
+  vol_map = map(vol, 0, 1, 10, 200);
   // console.log("volume " + vol_map);
 
   // if (getAudioContext().state !== 'running') {
