@@ -46,7 +46,6 @@ function setup() {
 
   speechRec = new p5.SpeechRec(lang, gotSpeech);
   mic = new p5.AudioIn();
-  mic.start();
 
   colorMode(RGB, 150, 150, 150); //colorMode(mode, max1, max2, max3, [maxA])
   textFont(font, fontSizeMin);
@@ -141,7 +140,8 @@ function writeOnCanvas() {
 
 function startMic() {
   console.log("listening");
-  let continuous = true; //continua a registrare
+  mic.start();
+  let continuous = false; //continua a registrare
   let interim = false;
   spoke = true;
   speechRec.start(continuous, interim);
@@ -149,8 +149,9 @@ function startMic() {
 }
 
 function stopMic() {
+  mic.stop();
   document.getElementById('panel').contentWindow.document.getElementById('micBtn').style.backgroundImage = "url('../assets/image/04.1_Mic fermo.png')"
-  console.log("release")
+  console.log("stop")
 }
 
 function gotSpeech() {
