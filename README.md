@@ -1,4 +1,4 @@
-![Header]
+![Header](./assets/logo/Loghi Spit It Out!_Tavola disegno 1-04.png)
 
 ### Team members:
 
