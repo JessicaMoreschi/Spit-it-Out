@@ -80,16 +80,10 @@ The site uses two different fonts: the one called "Fraktion Sans" is used in sta
 
 **Animations** <br>
 The last but not the least is the large use of animations. They have been realized to be used as hover (so they can be triggered by passing the mouse on it) or as simple visual effects (such as the titles of the sections). All these animations follow the previous rules of the visual identity.
-<p>
-   <div style="width:200px; float:left; margin-right:25px;">
-     <img src="assets/image/06.2_Diary.gif" width="200"> 
-   </div>  
-   <div style="width:150px; float:left; margin-right:25px;">
-     <img src="assets/image/04.3_Mic.gif" width="150">
-   </div>
-   <div style="width:150px; float:left; margin-right:25px;">
-     <img src="assets/image/08.2_Bottone pieno.gif" width="150">
-   </div>
+<p float="left">
+   <img src="assets/image/06.2_Diary.gif" width="200"> 
+   <img src="assets/image/04.3_Mic.gif" width="150">
+   <img src="assets/image/08.2_Bottone pieno.gif" width="150">
 </p> 
 
 ### UX
