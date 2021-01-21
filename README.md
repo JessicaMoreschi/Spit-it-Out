@@ -96,11 +96,13 @@ The UX have been designed to be simple and easy to understand for the users. The
 </p>
 
 Users can insert their messages by pressing the button "Write in the diary" settled in the section Diary. By pressing it, a window will appear and step by step it will be explained how to insert a message:
-- First it will be asked how they felt during the quarantine. Depending on the emotions chosen by moving the sliders, the stroke will have a certain color ().
+- First it will be asked how they felt during the quarantine. Depending on the emotions chosen by moving the sliders, the stroke will have a certain color (each slider is releated to a specific channel f the colour method RGB).
 - Second it will be asked to "spit it out" what thay are really feeling by holding with the mouse the mic icon. More high the voice volume is, more big   the stroke of words will appear on the canvas.
 - As third and final step it will be asked to click on the canvas of the site to see the final result.
 
-(insert an image here)
+<p align="center">
+  <img src="assets/readme/UX2.png" width="900">
+</p>
 
 ## Code challenges
 
