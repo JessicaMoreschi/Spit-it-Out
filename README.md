@@ -111,7 +111,7 @@ x. Recording users's speeches
 
 ## Credits
 Fonts used:
-[Fraktion Sans](https://www.behance.net/gallery/96836357/Fraktion-Sans-Typeface)
+[Fraktion Sans](https://www.behance.net/gallery/96836357/Fraktion-Sans-Typeface),
 [Typeka](https://fonts.adobe.com/fonts/typeka)
 
 Libraries: P5js, Firebase
