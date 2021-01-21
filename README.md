@@ -39,9 +39,7 @@ The entire experience is designed to work on computer and the mic is required.
 
 ## Design Challenges
 
-Different aspects have been useful in the development of the site's design.
-
-(write here a list of challenges or something like that. probably the main challenges was to create a "diary")
+In oreder to reflect in an effective way the concept, a strong visual identity was necessary. A first part of the project was to research some inspirations and works with an hand drawn look and a sort of "diary mood". 
 
 ### Inspirations
 
@@ -91,10 +89,16 @@ The last but not the least is the large use of animations. They have been realiz
 
 ### UX
 
-An image could be useful in order to give an overview of the site's workflow.
-Another littl UX for the recording and writing section of the diary (more specific functions
-of the devices mouse + microphone).
+The UX have been designed to be simple and easy to understand for the users. The site presents two different main sections: one is "Home page"   (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "Diary" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) and it's where you can find the messages levead by other users around the world.
 
+(insert an image here)
+
+Users can insert their messages by pressing the button "Write in the diary" settled in the section Diary. By pressing it, a window will appear and step by step it will be explained how to insert a message:
+- first it will be asked how they felt during the quarantine. 
+- second it will be asked to "spit it out" what thay are really feeling by holding with the mouse the mic icon.
+- cefd
+
+(insert an image here)
 
 ## Code challenges
 
