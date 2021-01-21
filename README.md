@@ -39,15 +39,13 @@ The entire experience is designed to work on computer and the mic is required.
 
 ## Design Challenges
 
-In oreder to reflect in an effective way the concept, a strong visual identity was necessary. A first part of the project was to research some inspirations and works with an hand drawn look and a sort of "diary mood". 
+In oreder to reflect an effective way the concept, a strong visual identity was necessary. A first part of the project was to research some inspirations and works with an hand drawn look and a sort of "diary mood". Infact, the site could be seen as a sort of public diary in which people can write their thougths without their identity being made public (no login or entering name is necessary). 
 
 ### Inspirations
 
-The design of this site was inspired by some works on bechance:
+The design and visual identity of this project was inspired by some works on bechance, 
 
 ### Visual identity
-
-The research of inspirations have been useful to create a strong visual identity for the site. Here some important aspects.
 
 **Logo** <br>
 The logo is composed of two aspects: the title of the site (Spit It Out) and a stylized megaphone, who
