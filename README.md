@@ -71,6 +71,13 @@ and paper. The two textures too were selected to remember paper and ink.
  <img src="assets/readme/Palette.png" width="800"/>
 </p>
 
+**Fonts** <br>
+The site uses two different fonts: the one called "Fraktion Sans" is used in standard texts, the other one called "Typeka", instead, is used in titles and underlined words (and it recalls typewriter's letters).
+
+<p align="center">
+ <img src="assets/readme/Fonts-08.png" width="800"/>
+</p>
+
 ### UX
 
 An image could be useful in order to give an overview of the site's workflow.
