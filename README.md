@@ -44,12 +44,14 @@ In oreder to reflect an effective way the concept, a strong visual identity was 
 ### Inspirations
 
 The design and visual identity of this project was inspired by some exiting works (not only works about web and internet, but also about graphic design and typography). Here some links and images to discover them:
-- [Paper textures](https://www.behance.net/gallery/105236297/Free-Download-8x-Detail-Paper-Texture-Collection?tracking_source=search_projects_recommended%7Cfree%20paper%20texture) by Freeject.net Design
-- [Elude](https://www.behance.net/gallery/108994253/Elude) by Herman Scheer
-- [Travel Bug](https://www.behance.net/gallery/38800427/Travel-Bug?tracking_source=search%7Cquotes) by Lara Resch
-- [Memories Book Design](https://www.behance.net/gallery/106580687/Memories-Book-Design?tracking_source=search_projects_recommended%7Csecret%20book) by Wanran Ding
+- [Paper textures](https://www.behance.net/gallery/105236297/Free-Download-8x-Detail-Paper-Texture-Collection?tracking_source=search_projects_recommended%7Cfree%20paper%20texture) by **Freeject.net Design**
+- [Elude](https://www.behance.net/gallery/108994253/Elude) by **Herman Scheer**
+- [Travel Bug](https://www.behance.net/gallery/38800427/Travel-Bug?tracking_source=search%7Cquotes) by **Lara Resch**
+- [Memories Book Design](https://www.behance.net/gallery/106580687/Memories-Book-Design?tracking_source=search_projects_recommended%7Csecret%20book) by **Wanran Ding**
 
-(images)
+<p float="left">
+  <img src="assets/readme/Elude" width="700"/>
+</p>  
 
 ### Visual identity
 
@@ -93,15 +95,15 @@ The last but not the least is the large use of animations. They have been realiz
 
 ### UX
 
-The UX have been designed to be simple and easy to understand for the users. The site presents two different main sections: one is "Home page" (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "Diary" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) and it's where you can find the messages levead by other users around the world.
+The UX have been designed to be simple and easy to understand for the users. The site presents two different main sections: one is "**Home page**" (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "**Diary**" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) and it's where you can find the messages levead by other users around the world.
 
 <p align="center">
   <img src="assets/readme/UX.png" width="900">
 </p>
 
 Users can insert their messages by pressing the button "Write in the diary" settled in the section Diary. By pressing it, a window will appear and step by step it will be explained how to insert a message:
-- First it will be asked how they felt during the quarantine. Depending on the emotions chosen by moving the sliders, the stroke will have a certain color (each slider is releated to a specific channel f the colour method RGB).
-- Second it will be asked to "spit it out" what thay are really feeling by holding with the mouse the mic icon. More high the voice volume is, more big   the stroke of words will appear on the canvas.
+- First it will be asked how they felt during the quarantine. Depending on the emotions chosen by moving the sliders, the stroke will have a certain **color** (each slider is releated to a specific channel f the colour method RGB).
+- Second it will be asked to "spit it out" what thay are really feeling by holding with the mouse the mic icon. More high the **voice volume** is, more big the stroke of words will appear on the canvas.
 - As third and final step it will be asked to click on the canvas of the site to see the final result.
 
 <p align="center">
