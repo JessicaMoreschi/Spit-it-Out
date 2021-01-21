@@ -26,11 +26,11 @@ We present you... **Spit It Out!**
 can be translated as “sputa il rospo”, “sputalo fuori”).
 
 It's is a common space that presents a diary as collaborative canvas: people will create 
-a masterpiece of “words traces”. Step by step, the site will ask some questions to the user 
+a masterpiece of “**words traces**”. Step by step, the site will ask some questions to the user 
 in order to generate a “river of words”. The final result it’s an artwork in which all 
 the bad and good feelings dance together.
 
-The aim of the project is giving voice to deep feelings, whatever they are. Together users 
+The aim of the project is giving voice to **deep feelings**, whatever they are. Together users 
 will create an amazing and unpredictable artwork that will be shaped by the interaction of 
 each other.
 
@@ -64,15 +64,15 @@ the initial letters S.I.O.
 </p>
 
 **Palette and textures** <br>
-The color palette is very simple, composed by only two main colors (black and white) which resembles ink
-and paper. The two textures too were selected to remember paper and ink.
+The color palette is very simple, composed by only two main colors (black and white) which resembles **ink**
+and **paper**. The two textures too were selected to remember paper and ink.
 
 <p align="center">
  <img src="assets/readme/Palette.png" width="800"/>
 </p>
 
 **Fonts** <br>
-The site uses two different fonts: the one called "Fraktion Sans" is used in standard texts, the other one called "Typeka", instead, is used in titles and underlined words (and it recalls typewriter's letters).
+The site uses two different fonts: the one called "**Fraktion Sans**" is used in standard texts, the other one called "**Typeka**", instead, is used in titles and underlined words (and it recalls typewriter's letters).
 
 <p align="center">
  <img src="assets/readme/Fonts-08.png" width="800"/>
@@ -94,9 +94,9 @@ The UX have been designed to be simple and easy to understand for the users. The
 (insert an image here)
 
 Users can insert their messages by pressing the button "Write in the diary" settled in the section Diary. By pressing it, a window will appear and step by step it will be explained how to insert a message:
-- first it will be asked how they felt during the quarantine. 
-- second it will be asked to "spit it out" what thay are really feeling by holding with the mouse the mic icon.
-- cefd
+- First it will be asked how they felt during the quarantine. Depending on the emotions chosen by moving the sliders, the stroke will have a certain color ().
+- Second it will be asked to "spit it out" what thay are really feeling by holding with the mouse the mic icon. More high the voice volume is, more big   the stroke of words will appear on the canvas.
+- As third and final step it will be asked to click on the canvas of the site to see the final result.
 
 (insert an image here)
 
