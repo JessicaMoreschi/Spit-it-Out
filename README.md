@@ -9,7 +9,7 @@
 -  Repetto Matteo
 
 ### Course
-[Creative Coding 2019/2020](https://drawwithcode.github.io/2020/)<br>
+[Creative Coding 2020/2021](https://drawwithcode.github.io/2020/)<br>
 **Politecnico di Milano** - Scuola del Design<br>
 **Faculty:** Michele Mauri, Andrea Benedetti, Tommaso Elli.
 
@@ -43,7 +43,13 @@ In oreder to reflect an effective way the concept, a strong visual identity was 
 
 ### Inspirations
 
-The design and visual identity of this project was inspired by some works on bechance, 
+The design and visual identity of this project was inspired by some exiting works (not only works about web and internet, but also about graphic design and typography). Here some links and images to discover them:
+- [Paper textures](https://www.behance.net/gallery/105236297/Free-Download-8x-Detail-Paper-Texture-Collection?tracking_source=search_projects_recommended%7Cfree%20paper%20texture) by Freeject.net Design
+- [Elude](https://www.behance.net/gallery/108994253/Elude) by Herman Scheer
+- [Travel Bug](https://www.behance.net/gallery/38800427/Travel-Bug?tracking_source=search%7Cquotes) by Lara Resch
+- [Memories Book Design](https://www.behance.net/gallery/106580687/Memories-Book-Design?tracking_source=search_projects_recommended%7Csecret%20book) by Wanran Ding
+
+(images)
 
 ### Visual identity
 
@@ -102,10 +108,12 @@ Users can insert their messages by pressing the button "Write in the diary" sett
   <img src="assets/readme/UX2.png" width="900">
 </p>
 
+
 ## Code challenges
 
 x. How save users's inputs. (firebase)
 x. Recording users's speeches
+
 
 ## Credits
 Fonts used:
