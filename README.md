@@ -89,9 +89,11 @@ The last but not the least is the large use of animations. They have been realiz
 
 ### UX
 
-The UX have been designed to be simple and easy to understand for the users. The site presents two different main sections: one is "Home page"   (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "Diary" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) and it's where you can find the messages levead by other users around the world.
+The UX have been designed to be simple and easy to understand for the users. The site presents two different main sections: one is "Home page" (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "Diary" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) and it's where you can find the messages levead by other users around the world.
 
-(insert an image here)
+<p align="center">
+  <img src="assets/readme/UX.png" width="900">
+</p>
 
 Users can insert their messages by pressing the button "Write in the diary" settled in the section Diary. By pressing it, a window will appear and step by step it will be explained how to insert a message:
 - First it will be asked how they felt during the quarantine. Depending on the emotions chosen by moving the sliders, the stroke will have a certain color ().
