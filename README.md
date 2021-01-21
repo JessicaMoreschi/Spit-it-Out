@@ -108,3 +108,10 @@ Users can insert their messages by pressing the button "Write in the diary" sett
 
 x. How save users's inputs. (firebase)
 x. Recording users's speeches
+
+## Credits
+Fonts used:
+[Fraktion Sans](https://www.behance.net/gallery/96836357/Fraktion-Sans-Typeface)
+[Typeka](https://fonts.adobe.com/fonts/typeka)
+
+Libraries: P5js, Firebase
