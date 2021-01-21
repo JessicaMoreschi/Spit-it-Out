@@ -30,6 +30,11 @@ a masterpiece of “**words traces**”. Step by step, the site will ask some qu
 in order to generate a “river of words”. The final result it’s an artwork in which all 
 the bad and good feelings dance together.
 
+<p align="center">
+  <img src="assets/readme/Concept.png" width="800" />
+</p>
+
+
 The aim of the project is giving voice to **deep feelings**, whatever they are. Together users 
 will create an amazing and unpredictable artwork that will be shaped by the interaction of 
 each other.
