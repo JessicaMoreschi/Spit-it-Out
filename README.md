@@ -45,9 +45,11 @@ Different aspects have been useful in the development of the site's design.
 
 ### Inspirations
 
-Here I have to write which sites/behance projects have been useful in order to choose the style.
+The design of this site was inspired by some works on bechance:
 
 ### Visual identity
+
+The research of inspirations have been useful to create a strong visual identity for the site. Here some important aspects.
 
 **Logo** <br>
 The logo is composed of two aspects: the title of the site (Spit It Out) and a stylized megaphone, who
