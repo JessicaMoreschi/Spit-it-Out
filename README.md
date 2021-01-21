@@ -50,9 +50,9 @@ The design and visual identity of this project was inspired by some exiting work
 - [Memories Book Design](https://www.behance.net/gallery/106580687/Memories-Book-Design?tracking_source=search_projects_recommended%7Csecret%20book) by **Wanran Ding**
 
 <p float="left">
-  <img src="assets/readme/Elude.png" width="320"/>
-  <img src="assets/readme/Memories.png" width="300"/>
-  <img src="assets/readme/BugTravel.png" width="320"/>
+  <img src="assets/readme/Elude.png" width="360"/>
+  <img src="assets/readme/Memories.png" width="340"/>
+  <img src="assets/readme/BugTravel.png" width="360"/>
 </p>  
 
 ### Visual identity
