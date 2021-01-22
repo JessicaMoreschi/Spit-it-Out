@@ -7,46 +7,46 @@
 
  */
 
-var mycanvas
+let mycanvas;
 
-var x = 0;
-var y = 0;
-var stepSize = 0.01;
+let font = 'typekaR';
+let letters = 'empty message ';
+let agents = [];
+let init = 0; //useful later in order to keep a maximum number of agents
+let agentCount = 0; // number of initial agents
+let maxAgentCount = 10; // max number of agents
+let noiseScale = 500; // you can modify it to change the vorticity of the flux
+let noiseStrength = 10; // idem
+let strokeWidth = 0.3;
+let fontSizeMin = 14;
+let overlayAlpha = 10; //quanto spariscono le scritte (scala 0-255)
+let stepSize = 0.01; //step of the Agent movement at each frame
 
-var font = 'typekaR';
-var letters = 'empty message ';
-var agents = [];
-var init = 0;
-var agentCount = 0; // initial agents
-var maxAgentCount = 10; // max agents
-var noiseScale = 500; // you can modify it to change the vorticity of the flux
-var noiseStrength = 10;
-var strokeWidth = 0.3;
-var fontSizeMin = 14;
-var overlayAlpha = 10; //quanto spariscono le scritte (scala 0-255)
+//Speech recognition settings //
+let speechRec;
+let lang = 'en-US'; //|| 'it-IT'
+let vol_map;
+let spoke = false;
+let vol_zero;
+let vol_text=4;
+let vol, mic;
 
-//impostazioni riconoscimento vocale //
-var speechRec;
-var lang = 'en-US'; //|| 'it-IT'
-var vol_map;
-var vol2 = 1;
-var spoke = false;
-var vol_zero;
-var vol_text=4;
-
-
-//impostazioni firebase
-var readData = []; //read data container
-var texts;
+//firebase variables
+let readData = []; //read data container
+let texts;
 
 function setup() {
-  //FIREBASE SETTINGS
-  database = firebase.database(); //start database
-  texts = database.ref('texts'); //start collection
-  //END FIREBASE SETTINGS
   mycanvas = createCanvas(windowWidth, windowHeight / 100 * 85);
   mycanvas.parent('canvas');
 
+  //FIREBASE SETTINGS
+  database = firebase.database(); //start database
+  texts = database.ref('texts'); //start collection
+  //load data from storage
+  texts.once("value", gotData);
+  texts.on("value", updateData); //The “value” event is triggered when changes are made to the database
+
+  //SPEECH RECOGNITION AND MIC
   speechRec = new p5.SpeechRec(lang, gotSpeech);
   mic = new p5.AudioIn();
   mic.start();
@@ -54,77 +54,67 @@ function setup() {
   colorMode(RGB, 150, 150, 150); //colorMode(mode, max1, max2, max3, [maxA])
   textFont(font, fontSizeMin);
 
-  //load data from storage
-  texts.once("value", gotData);
-  texts.on("value", updateData); //The “value” event is triggered when changes are made to the database
-
-  var micBtn = document.getElementById('panel').contentWindow.document.getElementById('micBtn');
+  let micBtn = document.getElementById('panel').contentWindow.document.getElementById('micBtn'); //mic icon
   micBtn.addEventListener('mousedown', startMic);
   micBtn.addEventListener('mouseup', stopMic);
 
   mycanvas.mousePressed(writeOnCanvas);
 
-  document.getElementById('panel').contentWindow.document.getElementById('arrowPanel4').addEventListener('click', closePanel) //chiudi pannello
+  document.getElementById('panel').contentWindow.document.getElementById('arrowPanel4').addEventListener('click', closePanel) // to close panel
 
-}; //fine setup
+}; //end of setup
 
 
 function draw() {
-  frameRate(9); // questo per far brutalmente rallentare le scritte
-  // //volume
+  frameRate(9); // to speed up or slow down the writings
+
+  //volume
   vol = round(mic.getLevel(), 2);
   vol_map = map(vol, 0, 1, 10, 200);
-   // console.log("volume " + vol_map);
+  console.log("volume " + vol_map);
 
-  // if (getAudioContext().state !== 'running') {
-  //   text('non funziona audio', width / 2, height / 2);
-  // } else {
-  //   text('audio abilitato', width / 2, height / 2);
-  // }
-
+  // To catch the volume of the spoken phrase
   //console.log("vol0 " + vol_zero);
   // console.log("vol_text " + vol_text);
-  if (vol_map > vol_zero+8){
+  if (vol_map > vol_zero+10){
     vol_text = vol_map;
     vol_zero =undefined;
-     console.log("vol_map > vol_zero !!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
   }
 
+  // transparent white layer in order to make the text disappear
   //fill('rgba(255,255,255, overlayAlpha)');
   noStroke();
   fill(255, overlayAlpha)
   rect(0, 0, width, height, overlayAlpha);
 
   // Draw agents
-
-  // Draw agents
     if (agentCount > maxAgentCount){
       init = agentCount - maxAgentCount;
     }
-    for (var i = init; i < agentCount; i++) {
+    for (let i = init; i < agentCount; i++) {
       agents[i].update(noiseScale, noiseStrength, strokeWidth);
     }
 
-} //fine draw;
+} //end of draw;
 
 function gotData(data) { //load data from server
-  var texts = data.val(); //The val() function returns an object.
-  var keys = Object.keys(texts); // Grab the keys to iterate over the object
+  let texts = data.val(); //The val() function returns an object.
+  let keys = Object.keys(texts); // Grab the keys to iterate over the object
   agentCount = keys.length;
-  console.log("gotData: " + agentCount)
-  for (var i = 0; i < keys.length; i++) { //for each object
-    var userText = texts[keys[i]]; //assign his data to var userText
+  // console.log("gotData: " + agentCount)
+  for (let i = 0; i < keys.length; i++) { //for each object
+    let userText = texts[keys[i]]; //assign his data to let userText
     agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_text);
   }
 }
 
 function updateData(data) { //update text list
-  var texts = data.val();
-  var keys = Object.keys(texts);
+  let texts = data.val();
+  let keys = Object.keys(texts);
   agentCount = keys.length;
     console.log("updateData: " + agentCount)
-  for (var i = keys.length - 1; i < keys.length; i++) { //select last object
-    var userText = texts[keys[i]];
+  for (let i = keys.length - 1; i < keys.length; i++) { //select last object
+    let userText = texts[keys[i]];
     agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_text);
   }
 }
@@ -132,16 +122,16 @@ function updateData(data) { //update text list
 
 function writeOnCanvas() {
   if (spoke==true) {
-  var rCol=document.getElementById('panel').contentWindow.document.getElementById('slider1').value
-  var gCol=document.getElementById('panel').contentWindow.document.getElementById('slider2').value
-  var bCol=document.getElementById('panel').contentWindow.document.getElementById('slider3').value
+  let rCol=document.getElementById('panel').contentWindow.document.getElementById('slider1').value
+  let gCol=document.getElementById('panel').contentWindow.document.getElementById('slider2').value
+  let bCol=document.getElementById('panel').contentWindow.document.getElementById('slider3').value
 
   agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_text);
   if (getAudioContext().state !== 'running') {
     getAudioContext().resume();
   }
   //write data
-  var data = { //crate user data
+  let data = { //crate user data
     xPos: mouseX,
     yPos: mouseY,
     rCol: rCol,
@@ -163,7 +153,7 @@ function startMic() {
   vol_zero = vol_map;
   console.log("listening");
   // mic.start();
-  let continuous = false; //continua a registrare
+  let continuous = false; //continue recording
   let interim = false;
   spoke = true;
   speechRec.start(continuous, interim);
@@ -171,7 +161,6 @@ function startMic() {
 }
 
 function stopMic() {
-  // speechRec.stop();
   document.getElementById('panel').contentWindow.document.getElementById('micBtn').style.backgroundImage = "url('../assets/image/04.1_Mic fermo.png')"
   console.log("stop")
 }
@@ -191,7 +180,7 @@ function gotSpeech() {
 function keyReleased() {
   if (key == 's' || key == 'S') saveCanvas('myDiaryPage', 'png');
   if (key == ' ') {
-    var newNoiseSeed = floor(random(10000));
+    let newNoiseSeed = floor(random(10000));
     noiseSeed(newNoiseSeed);
   }
   if (keyCode == DELETE || keyCode == BACKSPACE) background(255);
