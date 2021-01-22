@@ -1,4 +1,4 @@
-var font = 'Georgia';
+var font = 'typekaR';
 var fontSizeMin = 4;
 let mic, vol, vol_1; //Volume per dimensione lettere
 

@@ -13,7 +13,7 @@ var x = 0;
 var y = 0;
 var stepSize = 0.01;
 
-var font = 'Georgia';
+var font = 'typekaR';
 var letters = 'ciao ';
 var agents = [];
 var init = 0;
