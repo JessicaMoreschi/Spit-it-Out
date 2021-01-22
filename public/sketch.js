@@ -95,6 +95,13 @@ function draw() {
       agents[i].update(noiseScale, noiseStrength, strokeWidth);
     }
 
+    let rCol=document.getElementById('panel').contentWindow.document.getElementById('slider1').value
+    let gCol=document.getElementById('panel').contentWindow.document.getElementById('slider2').value
+    let bCol=document.getElementById('panel').contentWindow.document.getElementById('slider3').value
+
+    let sliderCol=document.getElementById('panel').contentWindow.document.getElementById('sliderCol');
+    sliderCol.style.backgroundColor= color(rCol, gCol, bCol);
+
 } //end of draw;
 
 function gotData(data) { //load data from server
@@ -146,6 +153,7 @@ function writeOnCanvas() {
   phrase.innerHTML=""
   phrase.style.padding= '0 0 0 0';
   }
+
   parent.document.getElementById('panel').style.display = 'none';
 }
 

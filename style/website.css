@@ -32,11 +32,11 @@ body {
 
 
 #logo {
-  width: 70px;
+  width: 80px;
   height: auto;
   max-height: 50px;
   margin: auto;
-  margin-left: 5%;
+  margin-left: 3%;
   border: none;
   background-repeat: no-repeat;
   background-size: contain;
@@ -250,9 +250,6 @@ button:active {
   transform: rotate(+90deg) translateY(30%) translateX(25%);
 }
 
-
-
-
 #arrow3 {
   position: absolute;
   top: 80%;
@@ -391,7 +388,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  margin: 10px auto 5px auto;
+  margin: 30px auto 15px auto;
   cursor: pointer;
 }
 
@@ -401,4 +398,15 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   margin: 0 auto 20px auto;
   font-family:'typekaR';
   font-size: 10pt;
+}
+
+#sliderCol{
+  background-color: #dddddd;
+  border: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  margin: 5px 0 0 0;
+  padding: 0;
+  -webkit-appearance: none;
 }

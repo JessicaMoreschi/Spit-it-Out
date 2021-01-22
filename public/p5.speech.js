@@ -247,7 +247,7 @@
     }
     else {
       this.rec = new Object();
-      console.log("p5.SpeechRec: webkitSpeechRecognition not supported in this browser.");
+      alert("SpeechRecognition is not supported in this browser");
     }
 
     // first parameter is language model (defaults to empty=U.S. English)
