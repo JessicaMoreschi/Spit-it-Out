@@ -14,7 +14,7 @@ var y = 0;
 var stepSize = 0.01;
 
 var font = 'typekaR';
-var letters = 'ciao ';
+var letters = 'empty message ';
 var agents = [];
 var init = 0;
 var agentCount = 0; // initial agents
@@ -23,7 +23,7 @@ var noiseScale = 500; // you can modify it to change the vorticity of the flux
 var noiseStrength = 10;
 var strokeWidth = 0.3;
 var fontSizeMin = 14;
-var overlayAlpha = 12; //quanto spariscono le scritte (scala 0-255)
+var overlayAlpha = 10; //quanto spariscono le scritte (scala 0-255)
 
 //impostazioni riconoscimento vocale //
 var speechRec;
@@ -74,7 +74,7 @@ function draw() {
   // //volume
   vol = round(mic.getLevel(), 2);
   vol_map = map(vol, 0, 1, 10, 200);
-   console.log("volume " + vol_map);
+   // console.log("volume " + vol_map);
 
   // if (getAudioContext().state !== 'running') {
   //   text('non funziona audio', width / 2, height / 2);
@@ -83,7 +83,7 @@ function draw() {
   // }
 
   //console.log("vol0 " + vol_zero);
-  console.log("vol_text " + vol_text);
+  // console.log("vol_text " + vol_text);
   if (vol_map > vol_zero+8){
     vol_text = vol_map;
     vol_zero =undefined;
@@ -96,15 +96,22 @@ function draw() {
   rect(0, 0, width, height, overlayAlpha);
 
   // Draw agents
-  for (var i = 0; i < agentCount; i++) {
-    agents[i].update(noiseScale, noiseStrength, strokeWidth);
-  }
+
+  // Draw agents
+    if (agentCount > maxAgentCount){
+      init = agentCount - maxAgentCount;
+    }
+    for (var i = init; i < agentCount; i++) {
+      agents[i].update(noiseScale, noiseStrength, strokeWidth);
+    }
+
 } //fine draw;
 
 function gotData(data) { //load data from server
   var texts = data.val(); //The val() function returns an object.
   var keys = Object.keys(texts); // Grab the keys to iterate over the object
   agentCount = keys.length;
+  console.log("gotData: " + agentCount)
   for (var i = 0; i < keys.length; i++) { //for each object
     var userText = texts[keys[i]]; //assign his data to var userText
     agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_text);
@@ -115,6 +122,7 @@ function updateData(data) { //update text list
   var texts = data.val();
   var keys = Object.keys(texts);
   agentCount = keys.length;
+    console.log("updateData: " + agentCount)
   for (var i = keys.length - 1; i < keys.length; i++) { //select last object
     var userText = texts[keys[i]];
     agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_text);
