@@ -181,7 +181,7 @@ function gotSpeech() {
 }
 
 function keyReleased() {
-  if (key == 's' || key == 'S') saveCanvas(gd.timestamp(), 'png');
+  if (key == 's' || key == 'S') saveCanvas('myDiaryPage', 'png');
   if (key == ' ') {
     var newNoiseSeed = floor(random(10000));
     noiseSeed(newNoiseSeed);
