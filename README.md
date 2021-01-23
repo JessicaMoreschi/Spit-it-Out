@@ -131,13 +131,8 @@ That's how it was introduced in the code: the  function **gotData()** is called 
   <li>
   
 <b>Update sentences</b> <br>
-• challenge:
-– when a user adds his own sentence, it must be seen from everyone in real time.
-– All the database must be constantly checked, but only the last element of the array must be loaded on change.
-• how we solved it:
-–The function texts.on("value", updateData) provides a constant check of the firebase database: each time it changes, it fires the updateData() function.
-– The updateData() function is the same of the previous gotData(): the difference is that it creates a new "agent" only for the last element of the firebase database array. 
-(it means that each time a new sentence is stored, it will appear on the canvas of everyone).
+Another chellenge relted to the previous one, was to make visible the changes made by other users in real time. This means that the database must be constantly checked, but only the last element of the array must be loaded on change. <br>
+So, the function **texts.on("value", updateData)** have been introduced. This function does a constant check of the firebase database: each time it changes, it triggers the function **updateData()**. This function is the same of the previous one (**gotData()**): the difference is that it creates a new **agent** only for the last element of the firebase database array (it means that each time a new sentence is stored, it will appear on the everyone's canvas).
 
   </li>
    
@@ -173,9 +168,7 @@ Then, when the new position is sufficiently far from the last letter, the functi
   <li>
   
 <b>index.html</b><br>
-• challenge:
-– give a diary look to some sentences by adding a function that “type-writes” them in real time
-– the function has to be triggered only once and only if the user is in the correct website section.
+The last but not he least, was to give a diary look to some sentences by adding a function that “type-writes” them in **real time**. But the real challenge was to trigger the function **only one time** and only when **the user is in the correct section**. <br>
 • how we solved it:
 –The function currentSection()evaluates in which website section the user is: it constantly checks the url and compares it with an if condition.
 – After detecting the section, it calls the right type() function (it manages to fire it only once by a comparison with the previous url).
