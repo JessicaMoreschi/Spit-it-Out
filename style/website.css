@@ -162,6 +162,8 @@ input {
   outline-style: none;
   box-shadow: none;
   border-color: transparent;
+  min-width: 0;
+  min-height: 0;
 }
 
 button,
@@ -329,10 +331,12 @@ button:active {
 #panel, #infoPanel {
   position: absolute;
   margin: 0;
-  bottom: 20%;
+  bottom: 20.5%;
   right: 5%;
   height: 55%;
+  min-height: 400px;
   width: 25%;
+  min-width: 300px;
   display: none;
   background-color: #000000;
   border-radius: 20px 20px 20px 20px;
@@ -342,15 +346,19 @@ button:active {
 }
 
 #infoPanel {
+  font-family: 'typekaM';
+  font-size: 8pt;
+  color: #000000;
+  background-color: #ffffff;
+  border: 2.5px solid #000000;
+  padding: 0 0 0 2.5px;
   bottom: 16%;
-  height: 20.5px;
+  height: 20px;
   width: 25%;
   display: none;
-  transform: translateX(-40px) translateY(-4px);
-  font-family: 'typekaR';
-  font-size: 8pt;
-  color: '#ffffff';
-  padding: 0 0 0 2.5px
+  transform: translateX(-41.5px) translateY(-4px);
+  min-width: 0;
+  min-height: 0;
 }
 
 input[type=range] {
