@@ -203,10 +203,64 @@ function gotSpeech() {
 <b>How to represent each phrase: Agent class</b><br>
 One of the main project's point was facing the challenge of writing people’s thoughts on the canvas with **Perlin noise**.
 In order to do so a new **class Agent** has been created. It represents the beginning of each sentence (which moves randomly at each frame) and contains the current position, the words of the entire phrase, the color, the size, and other parameters. 
+```
+class Agent{
+  constructor(x0,y0, color, string, vol){
+    this.pos = createVector(x0, y0); //current position
+    this.nextPos = this.pos.copy(); //next position
+    this.stepSize = random(1, 5);
+    this.isOutside = false;
+    this.angle;
+    this.letterIndex = 0; //it's for printing letters in the right order
+    this.col = color;
+    this.privateLetters = string;
+    this.lettersLength = string.length;
+    this.vol = vol;
+  }
+
+```
 
 The main method of the Agent class is **update()**, in which a while cycle is aimed at finding the new agents’ position at each frame (in order to print the new letter) and the distance from the previous letter. The angle of the movement direction at each frame is found with Perlin noise.
+```
+update(noiseScale, noiseStrength, strokeWidth) {
+// it's the method which actually prints the phrases
+    var newLetter = this.privateLetters.charAt(this.letterIndex);
+    fill(this.col)
+    var d = 0;
+    this.pos = this.nextPos.copy();
+    textSize(max(this.vol, d));
+
+    while(d <= textWidth(newLetter)){
+    //this while cycle it's for finding the next position at the right distance from the last letter, in order to print the new one
+    this.angle = noise(this.nextPos.x / noiseScale , this.nextPos.y / noiseScale) * noiseStrength; //the direction of the phrase's movement is found with random noise
+    this.nextPos.x = this.nextPos.x + cos(this.angle) * stepSize;
+    this.nextPos.y = this.nextPos.y + sin(this.angle) * stepSize;
+    this.isOutside = this.nextPos.x < 0 || this.nextPos.x > width || this.nextPos.y < 0 || this.nextPos.y > height;
+    if (this.isOutside) { //when the agent reaches the edge of the canvas is randomly put inside the canvas again
+      this.nextPos.set(random(width), random(height));
+      this.pos = this.nextPos.copy();
+      this.nextPos.x = this.nextPos.x + cos(this.angle) * stepSize;
+      this.nextPos.y = this.nextPos.y + sin(this.angle) * stepSize;
+      this.letterIndex = 0;
+    }
+    this.isOutside = false;
+    d = p5.Vector.dist(this.nextPos, this.pos);
+  } //fine while
+
+    newLetter = this.privateLetters.charAt(this.letterIndex);
+
+```
 
 Then, when the new position is sufficiently far from the last letter, the function prints the new letter on the canvas.
+```
+push();
+translate(this.pos.x, this.pos.y);
+let angle = atan2(this.nextPos.y - this.pos.y, this.nextPos.x - this.pos.x);
+rotate(angle);
+text(newLetter, 0, 0);
+pop();
+
+```
   </li>
 
   <li>
@@ -216,6 +270,37 @@ The last but not he least, was to give a diary-look to some sentences by adding 
 
 The function **currentSection()** have been helpful to evaluate in which website section the user is: it constantly checks the url and compares it with an if condition. After detecting the section, it calls the right function **type()** (it manages to tirgger it only once by a comparison with the previous url).
 This last function creates a new element of the class **"Typewriter**" (that generates strings with a typewriter look) and provides sending the methods properties.
+```
+    let prevUrl = '#firstPage';
+    window.setInterval(function currentSection() { //set a draw() function
+      let url = window.location.hash; //detect url hash
+      if (url == '#firstPage') { //1st page
+        if (url != prevUrl) { //run once
+          type1();
+          prevUrl = url
+        }
+      }
+ ```
+ ```
+     function type1() {
+      sound.play(); //start sound
+      //start typing
+      const instance = new Typewriter('#titolo1', {
+        strings: ['A diary for everyone.'],
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 5,
+        pauseFor: 2000
+      });
+      new Typewriter('#spit', {
+        strings: ['spit it out!'],
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 5,
+        pauseFor: 100000
+      });
+    }
+ ```
   </li>
 </ol>
 
