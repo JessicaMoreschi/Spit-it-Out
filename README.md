@@ -35,7 +35,7 @@ the bad and good feelings dance together.
 </p>
 
 In these days it's been very hard to comuninicate between us about how we are feeling, so the site wants to be useful for all of those people who needs to speak. It' doesn't matter what exactly you want to say, the important thing is to say it. 
-The aim of the project is giving voice to **deep feelings**, whatever they are. Together users 
+The aim of the project is to give voice to **deep feelings**, whatever they are. Together users 
 will create an amazing and unpredictable artwork that will be shaped by the interaction of 
 each other.
 
@@ -145,14 +145,6 @@ For this part, it has been introduced the libray "**p5.speech**", a speech synth
 It consists of an object class (p5.SpeechRec) along with an accessor function to listen for text, change parameters such as recognition models, etc.
 
 **"Continuous"** propriety is a **boolean** to set whether the speech recognition engine will give results continuously (**true**) or just once (**false = default**); instead, the propriety "**Interim**" is a boolean that deserve to determine whether the speech recognition engine will give faster, partial results (**true**) or wait for the speaker to pause (**false = default**). Another code's feature releated to audio is that the font's size is determined by the microphone (higher the voice's volume is, bigger the font will be) and this thanks to the class **new p5.AudioIn()**, which takes the volume (it is based on the  p5.sound library).
-  </li>
-
-  <li>
-  
-<b>write on canvas agent</b><br>
-The function writeOnCanvas()is triggered when the canvas is clicked, right after recording a new phrase.
-It creates a new instance of the class Agent, containing as initial position the mouse position, and also containing the new phrase pronounced by the user, the right dimension of the letters based on the speech volume and the color selected by the user.
-Moreover it sends the new data information to Firebase (with the texts.push(data) function), in order to keep track of all people’s thoughts. 
   </li>
   
   <li>
