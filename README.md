@@ -120,8 +120,9 @@ Users can insert their messages by pressing the button "Write in the diary" sett
 
 ## Code challenges
 
-x. How save users's inputs. (firebase)
-x. Recording users's speeches
+**1**. Preload sentences
+–The gotData() function is called in the setup() with the  texts.once("value", gotData) function, which provides the access to the Firebase storage. 
+–For each element ("keys") of the database array, it creates a new "agent"(sentence that will appear in the canvas) with defined parameters for the Agent constructor (mouse position, personalized colour, text and font size) picked from the Firebase storage.
 
 
 ## Credits
