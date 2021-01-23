@@ -158,11 +158,12 @@ function writeOnCanvas() {
   let phrase=document.getElementById('panel').contentWindow.document.getElementById('phrase');
   phrase.innerHTML=""
   phrase.style.padding= '0 0 0 0';
+  mySound.play();
   }
 
   //scomparsa pannelli
   parent.document.getElementById('panel').style.display = 'none';
-  mySound.play();
+  parent.document.getElementById('infoPanel').style.display = 'none';
 }
 
 function startMic() {
