@@ -168,11 +168,9 @@ Then, when the new position is sufficiently far from the last letter, the functi
   <li>
   
 <b>index.html</b><br>
-The last but not he least, was to give a diary look to some sentences by adding a function that “type-writes” them in **real time**. But the real challenge was to trigger the function **only one time** and only when **the user is in the correct section**. <br>
-• how we solved it:
-–The function currentSection()evaluates in which website section the user is: it constantly checks the url and compares it with an if condition.
-– After detecting the section, it calls the right type() function (it manages to fire it only once by a comparison with the previous url).
-– The  type() function creates a new element of the Typewriter class (that generates strings with a typewriter look) and provides sending the methods properties.
+The last but not he least, was to give a diary-look to some sentences by adding a function that “type-writes” them in **real time**. But the real challenge was to trigger the function **only one time** and only when **the user is in the correct section**. <br>
+The function **currentSection()** have been helpful to evaluate in which website section the user is: it constantly checks the url and compares it with an if condition. After detecting the section, it calls the right function **type()** (it manages to tirgger it only once by a comparison with the previous url).
+This last function creates a new element of the class **"Typewriter**" (that generates strings with a typewriter look) and provides sending the methods properties.
   </li>
 </ol>
 
