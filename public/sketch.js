@@ -35,6 +35,10 @@ let vol, mic;
 let readData = []; //read data container
 let texts;
 
+function preload() {
+  mySound = loadSound('../assets/sound/type.mp3');
+}
+
 function setup() {
   mycanvas = createCanvas(windowWidth, windowHeight / 100 * 85);
   mycanvas.parent('canvas');
@@ -155,6 +159,7 @@ function writeOnCanvas() {
   }
 
   parent.document.getElementById('panel').style.display = 'none';
+  mySound.play();
 }
 
 function startMic() {
