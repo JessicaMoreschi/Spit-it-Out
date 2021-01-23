@@ -31,10 +31,10 @@ in order to generate a “river of words”. The final result is an artwork in w
 the bad and good feelings dance together.
 
 <p align="center">
-  <img src="assets/readme/Concept.png" width="800" />
+  <img src="assets/readme/Spoiler.gif" width="700" />
 </p>
 
-In these days it's been very hard to communicate between us about how we are feeling, so the site wants to be useful for all of those people who needs to speak. It' doesn't matter what exactly you want to say, the important thing is to say it.
+In these days it's been very hard to communicate between us about how we are feeling, so the site wants to be useful for all of those people who needs to speak. It doesn't matter what exactly you want to say, the important thing is to say it.
 The aim of the project is to give voice to **deep feelings**, whatever they are. Together users
 will create an amazing and unpredictable artwork that will be shaped by the interaction of
 each other.
