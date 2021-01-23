@@ -154,17 +154,17 @@
         <div class="testo">
           <p id="titolo3">Credits. </p>
           <p id="testo1">
-            <font face="typekaM" id="secret">Team members:</font>
+            <font face="typekaM" id="team">Team members:</font>
             <br> Brambilla Chiara, Crippa Alessandra, Moreschi Jessica, Repetto Matteo.
             <br>
           <p id="testo1">
-            <font face="typekaM" id="secret">Course:</font>
+            <font face="typekaM" id="course">Course:</font>
             <br> Creative Coding 2020/2021, Politecnico di Milano - Scuola del Design.
             <br> Faculty: Benedetti Andrea, Elli Tommaso, Mauri Michele.
             <br>
             <br>
             <br> Click <a href="https://drawwithcode.github.io/2020/" target="_blank">
-              <font face="typekaM" id="secret">here</font>
+              <font face="typekaM" id="here">here</font>
               </a> for more projects.
           </p>
         </div>
@@ -320,6 +320,27 @@
         loop: true,
         deleteSpeed: 5,
         pauseFor: 2000
+      });
+      new Typewriter('#team', {
+        strings: ['Team members:'],
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 5,
+        pauseFor: 100000
+      });
+      new Typewriter('#course', {
+        strings: ['Course:'],
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 5,
+        pauseFor: 100000
+      });
+      new Typewriter('#here', {
+        strings: ['here'],
+        autoStart: true,
+        loop: true,
+        deleteSpeed: 5,
+        pauseFor: 100000
       });
     }
   </script>
