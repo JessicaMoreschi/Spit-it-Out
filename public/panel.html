@@ -3,24 +3,18 @@
 
 <head>
   <title>SpitItOut! | Home</title>
+  <link rel="icon" href="../assets/image/logoCompact.png" type="image/png" />
+
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
+  <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0 />
   <meta name="Resource-type" content="Document" />
 
   <link rel="stylesheet" type="text/css" href="../assets/font/stylesheet.css" charset="utf-8" />
-  <link rel="stylesheet" type="text/css" href="../style/website.css">
+  <link rel="stylesheet" type="text/css" href="../style/website.css" />
   <link rel="stylesheet" type="text/css" href="../dist/fullpage.css" />
-  <!-- <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.2.3/firebase-database.js"></script> -->
-  <script src="../dist/fullpage.js" type="text/javascript"></script>
-  <script src="../dist/p5.min.js" type="text/javascript"></script>
-  <!-- <script src="../dist/p5.sound.min.js" type="text/javascript"></script> -->
-  <!-- <script src="p5.speech.js" type="text/javascript"></script> -->
-  <!-- <script src="Agent.js" type="text/javascript"></script>
-  <script src="sketch.js" type="text/javascript"></script> -->
 
-
-
+  <script type="text/javascript" src="../dist/fullpage.js"></script>
+  <script type="text/javascript" src="../dist/p5.min.js"></script>
 
   <style>
     body {
@@ -29,23 +23,12 @@
       color: #ffffff;
       text-align: center;
     }
-
-    /* Centered texts in each section
-  	* --------------------------------------- */
-    .section {
-      text-align: center;
-    }
-
-    #fp-nav ul li a.active span,
-    .fp-slidesNav ul li a.active span,
-    #fp-nav ul li:hover a.active span,
-    .fp-slidesNav ul li:hover a.active span {
+    /* section navigator  */
+    #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
       border-radius: 100%;
       background: #ffffff;
     }
-
-    #fp-nav ul li a span,
-    .fp-slidesNav ul li a span {
+    #fp-nav ul li a span, .fp-slidesNav ul li a span {
       border-radius: 50%;
       position: absolute;
       z-index: 1;
@@ -62,8 +45,6 @@
       transition: all 0.1s ease-in-out;
     }
 
-    /* Fixed header and footer.
-  	* --------------------------------------- */
     #header,
     #footer {
       position: fixed;
@@ -74,48 +55,44 @@
       z-index: 9;
       padding: 0 0 0 0;
     }
-
     #header {
       top: 0px;
     }
-
     #footer {
       bottom: 0px;
       height: 5%;
       background-color: transparent
     }
+    .section {
+      text-align: center;
+    }
   </style>
-
-
 </head>
 
 <body>
-
+  <!-- header -->
   <div id="header">
     <img id="avanti" height="50px" src="../assets/image/avanzamento-03-03.png">
   </div>
-
+  <!-- body -->
   <div id="fullpage">
+    <!-- section0 -->
     <div class="section" id="section0">
+      <!-- section0 slide1-->
       <div class="slide" id="slide1" data-anchor="slide1">
         <div class="intro">
           <div class="testoPanel">
-            <p> Follow the steps to <br>
-              <font face="typekaM">write in the diary!</font>
-            </p>
+            <p> Follow the steps to <br><font face="typekaM">write in the diary!</font></p>
           </div>
           <a href="#firstPage/slide2"> <input id="arrowPanel1" onclick="document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-04.png')"> </a>
         </div>
       </div>
-
-
+      <!-- section0 slide2-->
       <div class="slide" id="slide2" data-anchor="slide2">
         <div class="intro">
           <div class="testoPanel">
-            <p>How did you <font face="typekaM">feel</font> <br> during the <font face="typekaM">quarantine?</font>
-            </p>
+            <p>How did you <font face="typekaM">feel</font> <br> during the <font face="typekaM">quarantine?</font></p>
           </div>
-
           <div class="slider">
             <table width="100%" style="margin: 0 auto">
               <tr>
@@ -141,15 +118,16 @@
               </tr>
             </table>
           </div>
-            <input type="button" id="sliderCol">
+          <input type="button" id="sliderCol">
           <a href="#firstPage/slide3"> <input id="arrowPanel2" onclick="document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-05.png')"> </a>
         </div>
       </div>
-
+      <!-- section0 slide3-->
       <div class="slide" id="slide3" data-anchor="slide3">
         <div class="intro">
           <div class="testoPanel">
-            <p><font face="typekaM">Hold </font>the <font face="typekaM">mic</font> <br> and <font face="typekaM">Spit It Out!</font>
+            <p>
+              <font face="typekaM">Hold </font>the <font face="typekaM">mic</font> <br> and <font face="typekaM">Spit It Out!</font>
             </p>
             <div class="mic" id="micBtn"></div>
             <div class="phrase" id="phrase"></div>
@@ -157,7 +135,7 @@
           </div>
         </div>
       </div>
-
+      <!-- section0 slide4-->
       <div class="slide" id="slide4" data-anchor="slide4">
         <div class="intro">
           <div class="testoPanel">
@@ -168,16 +146,13 @@
           </div>
         </div>
       </div>
-
     </div>
   </div>
-
-
-
+  <!-- footer -->
   <div id="footer">
   </div>
 
-
+  <!-- script manage sections -->
   <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
       anchors: ['firstPage'],
@@ -188,6 +163,4 @@
       slidesNavigation: false,
     });
   </script>
-
-
 </body>
