@@ -6,10 +6,10 @@
   let agentCount = 0; // number of initial agents
   let maxAgentCount = 15; // max number of agents
   let noiseScale = 500; // you can modify it to change the vorticity of the flux
-  let noiseStrength = 10; // idem
+  let noiseStrength = 10; // same
   let strokeWidth = 0.3;
   let fontSizeMin = 14;
-  let overlayAlpha = 10; //quanto spariscono le scritte (scala 0-255)
+  let overlayAlpha = 10; //how much the text disappear (range 0-255)
   let stepSize = 0.01; //step of the Agent movement at each frame
 
   //Speech recognition settings //
