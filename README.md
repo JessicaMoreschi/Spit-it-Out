@@ -65,7 +65,7 @@ The design and visual identity of this project was inspired by some exiting work
 **Logo** <br>
 The logo is composed by two aspects: the title of the site (Spit It Out) and a stylized megaphone, that
 represents the voice (a key element of the experience). Another characteristic is the applied texture, which gives an hand drawn look. <br>
-There is also an alternative versione of the logo with only the initial letters S.I.O.
+There is also an alternative versione of the logo with only the initial letters S.I.O. (used as the site's favicon).
 <p align="center" float="left">
  <img src="assets/logo/Logo_ext.png" height="300"/>
  <img src="assets/logo/Logo.png" height="300"/>
