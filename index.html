@@ -3,7 +3,7 @@
 
 <head>
   <title>SpitItOut! | Home</title>
-    <link rel="icon" href="../assets/image/logoCompact.png" type="image/gif">
+  <link rel="icon" href="../assets/image/logoCompact.png" type="image/gif">
 
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
@@ -14,51 +14,38 @@
   <link rel="stylesheet" type="text/css" href="./dist/fullpage.css" />
 
   <script src="./dist/p5.min.js"></script>
-  <!-- <script src="./dist/p5.sound.min.js"></script> -->
   <script type="text/javascript" src="./dist/fullpage.js"></script>
   <script src='./assets/typewriter/dist/core.js'></script>
+
   <style>
     body {
       padding: 0;
       margin: 0;
       color: #000000;
     }
-
-    #fp-nav ul li a.active span,
-    .fp-slidesNav ul li a.active span,
-    #fp-nav ul li:hover a.active span,
-    .fp-slidesNav ul li:hover a.active span{
-        border-radius: 100%;
-        background: #000000;
-     }
-    #fp-nav ul li a span,
-    .fp-slidesNav ul li a span {
-        border-radius: 50%;
-        position: absolute;
-        z-index: 1;
-        height: 8px;
-        width: 8px;
-        border: 0;
-        background: rgba(0, 0, 0, 0.1);
-        left: 0%;
-        top: 50%;
-        margin: -4px 0 0 -4px;
-        -webkit-transition: all 0.1s ease-in-out;
-        -moz-transition: all 0.1s ease-in-out;
-        -o-transition: all 0.1s ease-in-out;
-        transition: all 0.1s ease-in-out;
+    /* section navigator  */
+    #fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
+      border-radius: 100%;
+      background: #000000;
+    }
+    #fp-nav ul li a span, .fp-slidesNav ul li a span {
+      border-radius: 50%;
+      position: absolute;
+      z-index: 1;
+      height: 8px;
+      width: 8px;
+      border: 0;
+      background: rgba(0, 0, 0, 0.1);
+      left: 0%;
+      top: 50%;
+      margin: -4px 0 0 -4px;
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
     }
 
-    /* Centered texts in each section
-  	* --------------------------------------- */
-    .section {
-      text-align: center;
-    }
-
-    /* Fixed header and footer.
-  	* --------------------------------------- */
-    #header,
-    #footer {
+    #header, #footer {
       position: fixed;
       height: 10%;
       display: block;
@@ -67,11 +54,9 @@
       z-index: 9;
       padding: 0 0 0 0;
     }
-
     #header {
       top: 0px;
     }
-
     #footer {
       bottom: 0px;
       height: 5%;
@@ -80,31 +65,30 @@
       border-top-width: 1.5px;
       background-color: transparent
     }
-
+    .section {
+      text-align: center;
+    }
     #section0 {
       background-image: url(assets/image/paper1.jpg);
       background-repeat: no-repeat;
       background-size: cover;
     }
-
     #section1 {
       background-image: url(assets/image/paper2.jpg);
       background-repeat: no-repeat;
       background-size: cover;
     }
-
     #section2 {
       background-image: url(assets/image/paper3.jpg);
       background-repeat: no-repeat;
       background-size: cover;
     }
-
-    }
+  }
   </style>
 </head>
 
 <body>
-
+  <!-- header -->
   <div id="header">
     <div class="header">
       <a href="index.html#firstPage" class="header" id="logo"><img width="100%" src="./assets/logo/Logo_ext.png"></a>
@@ -114,16 +98,12 @@
       </a>
     </div>
   </div>
-
-  <audio id="type-sound">
-    <source src="../assets/sound/type.mp3" type="audio/mpeg" autoplay >
-  </audio>
-
+  <!-- body -->
   <div id="fullpage">
+    <!-- section0 -->
     <div class="section " id="section0">
       <div class="intro">
         <div class="testo">
-
           <p id="titolo1">A diary for everyone.</p>
           <p id="testo1">Hello and welcome to <font face="typekaM" id="spit">spit it out!</font>,
             <br> an online common secret diary!
@@ -136,7 +116,7 @@
         <a href="#3rdPage"><img class="underlineCredits" src="./assets/image/01_sottolineatura.gif"></a>
       </div>
     </div>
-
+    <!-- section1 -->
     <div class="section" id="section1">
       <div class="slide" id="slide1">
         <div class="intro">
@@ -159,7 +139,6 @@
                 will be hidden to other users…
                 <font face="typekaM" id="Feel">Feel free</font> to say what you really think, let’s start!
               </p>
-
             </div>
             <a href="./public/diary.html"><input type="image" id="imgBt1" value="Open diary"></a>
           </div>
@@ -169,85 +148,90 @@
         </div>
       </div>
     </div>
-
+    <!-- section2 -->
     <div class="section" id="section2">
       <div class="intro">
         <div class="testo">
           <p id="titolo3">Credits. </p>
-
-              <p id="testo1"><font face="typekaM" id="secret">Team members:</font>
-              <br> Brambilla Chiara, Crippa Alessandra, Moreschi Jessica, Repetto Matteo.
-              <br>
-              <p id="testo1"><font face="typekaM" id="secret">Course:</font>
-              <br> Creative Coding 2020/2021, Politecnico di Milano - Scuola del Design.
-              <br> Faculty: Benedetti Andrea, Elli Tommaso, Mauri Michele.
-              <br>
-              <br>
-              <br> Click <a href="https://drawwithcode.github.io/2020/" target="_blank">
-                   <font face="typekaM" id="secret">here</font></a> for more projects.
+          <p id="testo1">
+            <font face="typekaM" id="secret">Team members:</font>
+            <br> Brambilla Chiara, Crippa Alessandra, Moreschi Jessica, Repetto Matteo.
+            <br>
+          <p id="testo1">
+            <font face="typekaM" id="secret">Course:</font>
+            <br> Creative Coding 2020/2021, Politecnico di Milano - Scuola del Design.
+            <br> Faculty: Benedetti Andrea, Elli Tommaso, Mauri Michele.
+            <br>
+            <br>
+            <br> Click <a href="https://drawwithcode.github.io/2020/" target="_blank">
+              <font face="typekaM" id="secret">here</font>
+              </a> for more projects.
           </p>
         </div>
         <a href="#firstPage"><input id="arrow3"></a>
       </div>
     </div>
   </div>
-
+  <!-- footer -->
   <div id="footer">
     <div class="footer">
       <p>© SpitItOut! | Privacy Notice – Cookie Notice – FAQ | Realized with P5js</p>
     </div>
   </div>
+  <!-- audio track -->
+  <audio id="type-sound">
+    <source src="../assets/sound/type.mp3" type="audio/mpeg" autoplay>
+  </audio>
 
+<!-- scripts -->
+  <!-- detect browser -->
   <script>
-  let userAgentString =
-  navigator.userAgent;
-  if (userAgentString.indexOf("Chrome") > -1) {
-  } else {alert('For an optimal experience use Chrome')}
+    let userAgentString =
+      navigator.userAgent;
+    if (userAgentString.indexOf("Chrome") > -1) {} else {
+      alert('For an optimal experience use Chrome')
+    }
   </script>
-
+  <!-- manage sections -->
   <script type="text/javascript">
-  var sound = document.getElementById("type-sound");
-
+    //create sections
     var myFullpage = new fullpage('#fullpage', {
       anchors: ['firstPage', 'secondPage', '3rdPage'],
-      // sectionsColor: ['#ffffff', '#ffffff', '#ffffff'],
-      navigation: true, //puntini di navigazione a lato
+      navigation: true,
       navigationPosition: 'right',
       css3: true,
       onSectionload: type1()
     });
+    var sound = document.getElementById("type-sound"); //set sound
 
+    //detect sections
     let prevUrl = '#firstPage';
-
-    window.setInterval(function currentSection() {
-      let url = window.location.hash;
-
-      if (url == '#secondPage') {
-        if (url != prevUrl) {
-          type2();
-          prevUrl = url
-        }
-      }
-      if (url == '#3rdPage') {
-        if (url != prevUrl) {
-          type3();
-          prevUrl = url
-        }
-      }
-      if (url == '#firstPage') {
-        if (url != prevUrl) {
+    window.setInterval(function currentSection() { //set a draw() function
+      let url = window.location.hash; //detect url hash
+      if (url == '#firstPage') { //1st page
+        if (url != prevUrl) { //run once
           type1();
           prevUrl = url
         }
       }
+      if (url == '#secondPage') { //2nd page
+        if (url != prevUrl) { //run once
+          type2();
+          prevUrl = url
+        }
+      }
+      if (url == '#3rdPage') { //3rd page
+        if (url != prevUrl) { //run once
+          type3();
+          prevUrl = url
+        }
+      }
+    }, 1) //call function each 1 millisecond
 
-    }, 1)
-
-
-
-
+    //1st page functions
     function type1() {
-    sound.play();
+      sound.play(); //start sound
+      //start typing
       const instance = new Typewriter('#titolo1', {
         strings: ['A diary for everyone.'],
         autoStart: true,
@@ -263,9 +247,10 @@
         pauseFor: 100000
       });
     }
-
+    //2nd page functions
     function type2() {
-      sound.play();
+      sound.play(); //start sound
+      //start typing
       new Typewriter('#titolo2', {
         strings: ['What is it?'],
         autoStart: true,
@@ -323,9 +308,10 @@
         pauseFor: 100000
       });
     }
-
+    //3rd page functions
     function type3() {
-    sound.play();
+      sound.play(); //start sound
+      //start typing
       new Typewriter('#titolo3', {
         strings: ['Credits.'],
         autoStart: true,
