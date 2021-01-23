@@ -34,7 +34,7 @@ the bad and good feelings dance together.
   <img src="assets/readme/Concept.png" width="800" />
 </p>
 
-
+In these days it's been very hard to comuninicate between us about how we are feeling, so the site wants to be useful for all of those people who needs to speak. It' doesn't matter what exactly you want to say, the important thing is to say it. 
 The aim of the project is giving voice to **deep feelings**, whatever they are. Together users 
 will create an amazing and unpredictable artwork that will be shaped by the interaction of 
 each other.
@@ -158,11 +158,11 @@ Moreover it sends the new data information to Firebase (with the texts.push(data
   <li>
   
 <b>How to represent each phrase: Agent class</b><br>
-One of the main points of our project was facing the challenge of writing people’s thoughts on the canvas with Perlin noise.
-In order to do so we created a new class Agent that represents the beginning of each phrase (which moves randomly at each frame) and contains the current position, the words of the entire phrase, the color, the size, and other parameters. 
-(Non so se questo codice che mostra come è fatta la classe Agent lo volete mettere, secondo me ci starebbe bene qua sotto, nel caso eccolo)
-The main method of the Agent class is update(), in which a while cycle is aimed at finding the new agents’ position at each frame (in order to print the new letter) and the distance from the previous letter.
-The angle of the movement direction at each frame is found with Perlin noise.
+One of the main project's point was facing the challenge of writing people’s thoughts on the canvas with **Perlin noise**.
+In order to do so a new **class Agent** has been created. It represents the beginning of each sentence (which moves randomly at each frame) and contains the current position, the words of the entire phrase, the color, the size, and other parameters. 
+
+The main method of the Agent class is **update()**, in which a while cycle is aimed at finding the new agents’ position at each frame (in order to print the new letter) and the distance from the previous letter. The angle of the movement direction at each frame is found with Perlin noise.
+
 Then, when the new position is sufficiently far from the last letter, the function prints the new letter on the canvas.
   </li>
 
