@@ -166,7 +166,14 @@ Then, when the new position is sufficiently far from the last letter, the functi
 
   <li>
   
-<b>Ttile</b><br>
+<b>index.html</b><br>
+• challenge:
+– give a diary look to some sentences by adding a function that “type-writes” them in real time
+– the function has to be triggered only once and only if the user is in the correct website section.
+• how we solved it:
+–The function currentSection()evaluates in which website section the user is: it constantly checks the url and compares it with an if condition.
+– After detecting the section, it calls the right type() function (it manages to fire it only once by a comparison with the previous url).
+– The  type() function creates a new element of the Typewriter class (that generates strings with a typewriter look) and provides sending the methods properties.
   </li>
 </ol>
 
