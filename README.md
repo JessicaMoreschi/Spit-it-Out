@@ -141,11 +141,10 @@ So, the function **texts.on("value", updateData)** have been introduced. This fu
   <li>
   
 <b>Audio and recording</b><br>
-we use p5.speech library a Speech synthesis and recognition for p5.js
-is a p5 extension to provide Web Speechp. It consists of an object class (p5.SpeechRec) along with an accessor function to listen for text, change parameters such as recognition models, etc.
-Continuous propriety is a boolean to set whether the speech recognition engine will give results continuously (true) or just once (false = default).
-Interim propriety is a boolean to determine whether the speech recognition engine will give faster, partial results (true) or wait for the speaker to pause (false = default).
-We also used the microphone to set the font size. we get the volume with the class new p5.AudioIn() that is based on the  p5.sound library.
+For this part, it has been introduced the libray "**p5.speech**", a speech synthesis recognition for p5.js. 
+It consists of an object class (p5.SpeechRec) along with an accessor function to listen for text, change parameters such as recognition models, etc.
+
+**"Continuous"** propriety is a **boolean** to set whether the speech recognition engine will give results continuously (**true**) or just once (**false = default**); instead, the propriety "**Interim**" is a boolean that deserve to determine whether the speech recognition engine will give faster, partial results (**true**) or wait for the speaker to pause (**false = default**). Another code's feature releated to audio is that the font's size is determined by the microphone (higher the voice's volume is, bigger the font will be) and this thanks to the class **new p5.AudioIn()**, which takes the volume (it is based on the  p5.sound library).
   </li>
 
   <li>
@@ -170,7 +169,7 @@ Then, when the new position is sufficiently far from the last letter, the functi
   <li>
   
 <b>index.html</b><br>
-The last but not he least, was to give a diary-look to some sentences by adding a function that “type-writes” them in **real time**. But the real challenge was to trigger the function **only one time** and only when **the user is in the correct section**. <br>
+The last but not he least, was to give a diary-look to some sentences by adding a function that “type-writes” them in **real time**. But the real challenge was to trigger the function **only once** and only when **the user is in the correct section**. <br>
 
 The function **currentSection()** have been helpful to evaluate in which website section the user is: it constantly checks the url and compares it with an if condition. After detecting the section, it calls the right function **type()** (it manages to tirgger it only once by a comparison with the previous url).
 This last function creates a new element of the class **"Typewriter**" (that generates strings with a typewriter look) and provides sending the methods properties.
