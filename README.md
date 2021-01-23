@@ -122,9 +122,15 @@ Users can insert their messages by pressing the button "Write in the diary" sett
 <ol>
   <li>  
     
-<b>Preload sentences</b> <br>
+<b>Preload sentences</b><br>
+• challenge:
+– Load all the sentences that users have left in the canvas 
+(the challenge was to store them in a server storage to preserve them)
+• how we solved it:
+We solved it using the Firebase server:
 –The gotData() function is called in the setup() with the  texts.once("value", gotData) function, which provides the access to the Firebase storage. 
 –For each element ("keys") of the database array, it creates a new "agent"(sentence that will appear in the canvas) with defined parameters for the Agent constructor (mouse position, personalized colour, text and font size) picked from the Firebase storage.
+
   </li>
   
   <li>
