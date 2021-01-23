@@ -124,6 +124,7 @@ Users can insert their messages by pressing the button "Write in the diary" sett
     
 <b>Preload sentences</b><br>
 As first thing, it had been necessary to undesrtand how to preserve all the sentences that users have left in the canvas. Therefore, it was necessary to store the data given by the users on a server. The solution? Use "**Firebase** server". Firebase is a Google's platfrom that helps to develop apps in a high-quality way; it has a lot of interesting functions, such as the possibility to store data given by users and control them (for example, you can delete or modify them). <br>
+
 That's how it was introduced in the code: the  function **gotData()** is called in the **setup()** with the function **texts.once("value", gotData)**, which provides the access to the Firebase storage. Then, For each element (called "**keys**") of the database array, it creates a new "agent" (sentence that will appear in the canvas) with defined parameters for Agent constructor (mouse position, personalized colour, text and font size) picked from Firebase's storage.
 
   </li>
@@ -132,6 +133,7 @@ That's how it was introduced in the code: the  function **gotData()** is called 
   
 <b>Update sentences</b> <br>
 Another chellenge relted to the previous one, was to make visible the changes made by other users in real time. This means that the database must be constantly checked, but only the last element of the array must be loaded on change. <br>
+
 So, the function **texts.on("value", updateData)** have been introduced. This function does a constant check of the firebase database: each time it changes, it triggers the function **updateData()**. This function is the same of the previous one (**gotData()**): the difference is that it creates a new **agent** only for the last element of the firebase database array (it means that each time a new sentence is stored, it will appear on the everyone's canvas).
 
   </li>
@@ -169,6 +171,7 @@ Then, when the new position is sufficiently far from the last letter, the functi
   
 <b>index.html</b><br>
 The last but not he least, was to give a diary-look to some sentences by adding a function that “type-writes” them in **real time**. But the real challenge was to trigger the function **only one time** and only when **the user is in the correct section**. <br>
+
 The function **currentSection()** have been helpful to evaluate in which website section the user is: it constantly checks the url and compares it with an if condition. After detecting the section, it calls the right function **type()** (it manages to tirgger it only once by a comparison with the previous url).
 This last function creates a new element of the class **"Typewriter**" (that generates strings with a typewriter look) and provides sending the methods properties.
   </li>
