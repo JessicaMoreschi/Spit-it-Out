@@ -68,8 +68,8 @@ represents the voice (a key element of the experience). Another characteristic i
 on the logo, who gives a hand drawn look. <br>
 There is also an alternative versione of the logo with only the initial letters S.I.O.
 <p align="center" float="left">
- <img src="assets/logo/Logo_ext.png" width="300"/>
- <img src="assets/logo/Logo.png" width="300"/>
+ <img src="assets/logo/Logo_ext.png" height="300"/>
+ <img src="assets/logo/Logo.png" height="300"/>
 </p>
 
  
@@ -162,7 +162,7 @@ function updateData(data) { //update text list
    
   <li>
   
-<b>Audio and recording</b><br>
+<b>Speech recognition</b><br>
 For this part, it has been introduced the libray "**p5.speech**", a speech synthesis recognition for p5.js. 
 It consists of an object class (p5.SpeechRec) along with an accessor function to listen for text, change parameters such as recognition models, etc.
 
