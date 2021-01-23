@@ -99,10 +99,10 @@ Last but not the least, there's the large use of animations. They have been real
 
 ### UX
 
-The UX have been designed to be simple and easily understood. The site presents two main sections: one is "**Home page**" (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "**Diary**" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) is the common space where you can find the messages left by other users around the world.
+The UX have been designed to be simple and easily understood. The site presents two main sections: one is "**Home page**" (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "**Diary**" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) is the common space where you can find the messages left by other users around the world. Users can intercat with the canvas by pressing some keyboard's buttons: **Spacebar** change the direction of traces, **S** print the canvas as a png file and **Delete** refresh the canvas. All these informations are visible by pressing the button "**i**" under the button "write in the diary".
 
 <p align="center">
-  
+  <img src="assets/readme/UX-09.png" width="900">
 </p>
 
 Users can insert their own messages by pressing the button "Write in the diary" settled in the section Diary. If clicked, a window will appear and step by step it will be explained how to insert a message:
