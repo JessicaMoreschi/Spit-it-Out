@@ -22,21 +22,21 @@ integrity. But we can bring out the best from this situation: Now it’s your ch
 everyone how you’re feeling… through creativity!
 
 We present you... **Spit It Out!**
-"Spit It Out" is phrase used to incentive to say what you are really thinking (in italian
+ This phrase is used as an invite to say what you are really thinking (in italian
 can be translated as “sputa il rospo”, “sputalo fuori”).
 
-It's is a common space that presents a diary as collaborative canvas: people will create 
-a masterpiece of “**words traces**”. Step by step, the site will ask some questions to the user 
-in order to generate a “river of words”. The final result it’s an artwork in which all 
+The site is a common space that presents a diary as collaborative canvas: people will create
+a masterpiece of “**words traces**”. Step by step, the user will answer some questions
+in order to generate a “river of words”. The final result is an artwork in which all
 the bad and good feelings dance together.
 
 <p align="center">
   <img src="assets/readme/Concept.png" width="800" />
 </p>
 
-In these days it's been very hard to comuninicate between us about how we are feeling, so the site wants to be useful for all of those people who needs to speak. It' doesn't matter what exactly you want to say, the important thing is to say it. 
-The aim of the project is to give voice to **deep feelings**, whatever they are. Together users 
-will create an amazing and unpredictable artwork that will be shaped by the interaction of 
+In these days it's been very hard to comuninicate between us about how we are feeling, so the site wants to be useful for all of those people who needs to speak. It' doesn't matter what exactly you want to say, the important thing is to say it.
+The aim of the project is to give voice to **deep feelings**, whatever they are. Together users
+will create an amazing and unpredictable artwork that will be shaped by the interaction of
 each other.
 
 The entire experience is designed to work on computer and the mic is required.
@@ -44,7 +44,7 @@ The entire experience is designed to work on computer and the mic is required.
 
 ## Design Challenges
 
-In oreder to reflect an effective way the concept, a strong visual identity was necessary. A first part of the project was to research some inspirations and works with an hand drawn look and a sort of "diary mood". Infact, the site could be seen as a sort of public diary in which people can write their thougths without their identity being made public (no login or entering name is necessary). 
+The concept is communicated with a strong visual identity, which is inspired by hand–drawn sketches in order to express the "diary mood". In fact, the site could be seen as a sort of public diary in which people can write their thoughts without their identity being made public (no login or entering name is necessary).
 
 ### Inspirations
 
@@ -63,16 +63,15 @@ The design and visual identity of this project was inspired by some exiting work
 ### Visual identity
 
 **Logo** <br>
-The logo is composed of two aspects: the title of the site (Spit It Out) and a stylized megaphone, who
-represents the voice (a key element of the experience). Another characteristic is the texture applied
-on the logo, who gives a hand drawn look. <br>
+The logo is composed by two aspects: the title of the site (Spit It Out) and a stylized megaphone, that
+represents the voice (a key element of the experience). Another characteristic is the applied texture, which gives an hand drawn look. <br>
 There is also an alternative versione of the logo with only the initial letters S.I.O.
 <p align="center" float="left">
  <img src="assets/logo/Logo_ext.png" height="300"/>
  <img src="assets/logo/Logo.png" height="300"/>
 </p>
 
- 
+
 
 **Palette and textures** <br>
 The color palette is very simple, composed by only two main colors (black and white) which resembles **ink**
@@ -90,25 +89,25 @@ The site uses two different fonts: the one called "**Fraktion Sans**" is used in
 </p>
 
 **Animations** <br>
-The last but not the least is the large use of animations. They have been realized to be used as hover (so they can be triggered by passing the mouse on it) or as simple visual effects (such as the titles of the sections). All these animations follow the previous rules of the visual identity.
+Last but not the least, there's the large use of animations. They have been realized to be used as hover (so they can be triggered by passing the mouse on it) or as simple visual effects (such as the titles of the sections). All these animations follow the previous rules of the visual identity.
 <p float="left" align="center">
    <img src="assets/image/06.2_Diary.gif" width="200">      
    <img src="assets/image/04.3_Mic.gif" width="150">
    <img src="assets/image/08.2_Bottone pieno.gif" width="150">
    <img src="assets/image/09.2_Bottone traccia.gif" width="150">
-</p> 
+</p>
 
 ### UX
 
-The UX have been designed to be simple and easy to understand for the users. The site presents two different main sections: one is "**Home page**" (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "**Diary**" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) and it's where you can find the messages levead by other users around the world.
+The UX have been designed to be simple and easily understood. The site presents two main sections: one is "**Home page**" (reachable in any moment by pressing on the button with site's logo settled in the top-left of the page), in which you can find a welcome message, informations about what kind of site it is and the credits. The other one section is called "**Diary**" (reachable by pressing the diary in the top-right part of the site or the button "write in the diary" in the Home page) is the common space where you can find the messages left by other users around the world.
 
 <p align="center">
   <img src="assets/readme/UX.png" width="900">
 </p>
 
-Users can insert their messages by pressing the button "Write in the diary" settled in the section Diary. By pressing it, a window will appear and step by step it will be explained how to insert a message:
-- First it will be asked how they felt during the quarantine. Depending on the emotions chosen by moving the sliders, the stroke will have a certain **color** (each slider is releated to a specific channel f the colour method RGB).
-- Second it will be asked to "spit it out" what thay are really feeling by holding with the mouse the mic icon. More high the **voice volume** is, more big the stroke of words will appear on the canvas.
+Users can insert their own messages by pressing the button "Write in the diary" settled in the section Diary. If clicked, a window will appear and step by step it will be explained how to insert a message:
+- First it will be asked how they felt during the quarantine. Depending on the emotions chosen by moving the sliders, the stroke of the sentence will assume a certain **color** (each slider is releated to a specific channel of the colour method RGB).
+- Second it will be asked to "spit it out" what thay are really feeling by holding with the mouse the mic icon. The volume level will affect the size of the words that will appear on the canvas.
 - As third and final step it will be asked to click on the canvas of the site to see the final result.
 
 <p align="center">
@@ -119,11 +118,11 @@ Users can insert their messages by pressing the button "Write in the diary" sett
 ## Code challenges
 <ol>
   <li>  
-    
-<b>Preload sentences</b><br>
-As first thing, it had been necessary to undesrtand how to preserve all the sentences that users have left in the canvas. Therefore, it was necessary to store the data given by the users on a server. The solution? Use "**Firebase** server". Firebase is a Google's platfrom that helps to develop apps in a high-quality way; it has a lot of interesting functions, such as the possibility to store data given by users and control them (for example, you can delete or modify them). <br>
 
-That's how it was introduced in the code: the  function **gotData()** is called in the **setup()** with the function **texts.once("value", gotData)**, which provides the access to the Firebase storage. Then, For each element (called "**keys**") of the database array, it creates a new "agent" (sentence that will appear in the canvas) with defined parameters for Agent constructor (mouse position, personalized colour, text and font size) picked from Firebase's storage.
+<b>Preload sentences</b><br>
+First, it has been necessary to understand how to preserve all the sentences that users have left in the canvas. Therefore, it was necessary to store them in a server. The solution? Use "**Firebase** server". Firebase is a Google's platform that helps to develop apps in a high-quality way; it has a lot of interesting functions, such as the possibility to store data given by users and control them (for example, you can delete or modify them). <br>
+
+That's how it was introduced in the code: the  function **gotData()** is called in the **setup()** with the function **texts.once("value", gotData)**, which provides the access to the Firebase storage. Then, for each element (called "**keys**") of the database array, it creates a new "agent" (sentence that will appear in the canvas) with defined parameters for the Agent constructor (mouse position, personalized colour, text and font size) picked from Firebase's storage.
 ```
 function gotData(data) { //load data from server
   let texts = data.val(); //The val() function returns an object.
@@ -138,11 +137,11 @@ function gotData(data) { //load data from server
 ```
 
   </li>
-  
+
   <li>
-  
+
 <b>Update sentences</b> <br>
-Another chellenge relted to the previous one, was to make visible the changes made by other users in real time. This means that the database must be constantly checked, but only the last element of the array must be loaded on change. <br>
+Another challenge related to the previous one was to make visible the changes made by other users in real time. This means that the database must be constantly checked, but only the last element of the array must be loaded on change. <br>
 
 So, the function **texts.on("value", updateData)** have been introduced. This function does a constant check of the firebase database: each time it changes, it triggers the function **updateData()**. This function is the same of the previous one (**gotData()**): the difference is that it creates a new **agent** only for the last element of the firebase database array (it means that each time a new sentence is stored, it will appear on the everyone's canvas).
 ```
@@ -159,14 +158,14 @@ function updateData(data) { //update text list
 ```
 
   </li>
-   
+
   <li>
-  
+
 <b>Speech recognition</b><br>
-For this part, it has been introduced the libray "**p5.speech**", a speech synthesis recognition for p5.js. 
+For this part, it has been introduced the libray "**p5.speech**", a speech synthesis recognition for p5.js.
 It consists of an object class (p5.SpeechRec) along with an accessor function to listen for text, change parameters such as recognition models, etc.
 
-**"Continuous"** propriety is a **boolean** to set whether the speech recognition engine will give results continuously (**true**) or just once (**false = default**); instead, the propriety "**Interim**" is a boolean that deserve to determine whether the speech recognition engine will give faster, partial results (**true**) or wait for the speaker to pause (**false = default**). Another code's feature releated to audio is that the font's size is determined by the microphone (higher the voice's volume is, bigger the font will be) and this thanks to the class **new p5.AudioIn()**, which takes the volume (it is based on the  p5.sound library).
+**"Continuous"** propriety is a **boolean** to set whether the speech recognition engine will give results continuously (**true**) or just once (**false = default**); instead, the propriety "**Interim**" is a boolean that deserve to determine whether the speech recognition engine will give faster, partial results (**true**) or wait for the speaker to pause (**false = default**). Another code's feature related to audio is that the font's size is determined by the microphone (higher the voice's volume is, bigger the font will be) and this thanks by the class **new p5.AudioIn()**, which takes the volume level (it is based on the  p5.sound library).
 ```
 function startMic() {
   vol_zero = vol_map;
@@ -195,12 +194,12 @@ function gotSpeech() {
 }
 ```
   </li>
-  
+
   <li>
-  
+
 <b>How to represent each phrase: Agent class</b><br>
 One of the main project's point was facing the challenge of writing people’s thoughts on the canvas with **Perlin noise**.
-In order to do so a new **class Agent** has been created. It represents the beginning of each sentence (which moves randomly at each frame) and contains the current position, the words of the entire phrase, the color, the size, and other parameters. 
+In order to do so, a new **class Agent** has been created. It represents the beginning of each sentence (which moves randomly at each frame) and contains the current position, the words of the entire phrase, the color, the size, and other parameters.
 ```
 class Agent{
   constructor(x0,y0, color, string, vol){
@@ -262,11 +261,11 @@ pop();
   </li>
 
   <li>
-  
-<b>index.html</b><br>
-The last but not he least, was to give a diary-look to some sentences by adding a function that “type-writes” them in **real time**. But the real challenge was to trigger the function **only once** and only when **the user is in the correct section**. <br>
 
-The function **currentSection()** have been helpful to evaluate in which website section the user is: it constantly checks the url and compares it with an if condition. After detecting the section, it calls the right function **type()** (it manages to tirgger it only once by a comparison with the previous url).
+<b>index.html</b><br>
+Last but not least, there was to give a diary-look to some sentences by adding a function that “type-writes” them in **real time**. But the real challenge was to trigger the function **only once** and only when **the user is in the correct section**. <br>
+
+The function **currentSection()** manage to evaluate in which website section the user is: it constantly checks the url and compares it with an if condition. After detecting the section, it calls the right function **type()** (it manages to trigger it only once by a comparison with the previous url).
 This last function creates a new element of the class **"Typewriter**" (that generates strings with a typewriter look) and provides sending the methods properties.
 ```
     let prevUrl = '#firstPage';
