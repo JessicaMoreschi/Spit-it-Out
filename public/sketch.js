@@ -14,7 +14,7 @@ let letters = 'empty message ';
 let agents = [];
 let init = 0; //useful later in order to keep a maximum number of agents
 let agentCount = 0; // number of initial agents
-let maxAgentCount = 10; // max number of agents
+let maxAgentCount = 15; // max number of agents
 let noiseScale = 500; // you can modify it to change the vorticity of the flux
 let noiseStrength = 10; // idem
 let strokeWidth = 0.3;
@@ -80,7 +80,7 @@ function draw() {
   console.log("volume " + vol_map);
 
   // To catch the volume of the spoken phrase
-  if (vol_map > vol_zero+1){
+  if (vol_map > vol_zero+2){
     vol_text = vol_map;
     vol_zero =undefined;
   }
