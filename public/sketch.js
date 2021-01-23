@@ -77,16 +77,15 @@ function draw() {
   //volume
   vol = round(mic.getLevel(), 2);
   vol_map = map(vol, 0, 1, 10, 22);
-//  console.log("volume " + vol_map);
+  console.log("volume " + vol_map);
 
   // To catch the volume of the spoken phrase
-
   if (vol_map > vol_zero+10){
     vol_text = vol_map;
     vol_zero =undefined;
   }
   console.log("vol0 " + vol_zero);
-  console.log("vol_text " + vol_text);
+  //console.log("vol_text " + vol_text);
 
   // transparent white layer in order to make the text disappear
   //fill('rgba(255,255,255, overlayAlpha)');
@@ -141,8 +140,10 @@ function writeOnCanvas() {
   let bCol=document.getElementById('panel').contentWindow.document.getElementById('slider3').value
 
   agents[agentCount] = new Agent(mouseX, mouseY, color(rCol, gCol, bCol), letters, vol_text);
+
   if (getAudioContext().state !== 'running') {
     getAudioContext().resume();
+
   }
   //write data
   let data = { //crate user data
@@ -170,7 +171,8 @@ function writeOnCanvas() {
 function startMic() {
   vol_zero = vol_map;
 //  console.log("listening");
-  // mic.start();
+
+  mic.start();
   let continuous = false; //continue recording
   let interim = false;
   spoke = true;
