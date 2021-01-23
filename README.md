@@ -120,30 +120,49 @@ Users can insert their messages by pressing the button "Write in the diary" sett
 
 ## Code challenges
 <ol>
-  <li>
-    
+  <li>   
 <b>Preload sentences</b> <br>
 –The gotData() function is called in the setup() with the  texts.once("value", gotData) function, which provides the access to the Firebase storage. 
 –For each element ("keys") of the database array, it creates a new "agent"(sentence that will appear in the canvas) with defined parameters for the Agent constructor (mouse position, personalized colour, text and font size) picked from the Firebase storage.
   </li>
-   <li>
+  
+  <li>
 <b>Update sentences</b> <br>
 –The function texts.on("value", updateData) provides a constant check of the firebase database: each time it changes, it fires the updateData() function.
 – The updateData() function is the same of the previous gotData(): the difference is that it creates a new "agent" only for the last element of the firebase database array. 
 (it means that each time a new sentence is stored, it will appear on the canvas of everyone).
-
-3. **Audio and recording** <br>
+  </li>
+   
+  <li>
+<b>Audio and recording</b><br>
 we use p5.speech library a Speech synthesis and recognition for p5.js
 is a p5 extension to provide Web Speechp. It consists of an object class (p5.SpeechRec) along with an accessor function to listen for text, change parameters such as recognition models, etc.
 Continuous propriety is a boolean to set whether the speech recognition engine will give results continuously (true) or just once (false = default).
 Interim propriety is a boolean to determine whether the speech recognition engine will give faster, partial results (true) or wait for the speaker to pause (false = default).
 We also used the microphone to set the font size. we get the volume with the class new p5.AudioIn() that is based on the  p5.sound library.
+  </li>
 
-4. write on canvas agent ale e chia 
+  <li>
+<b>write on canvas agent</b><br>
 The function writeOnCanvas()is triggered when the canvas is clicked, right after recording a new phrase.
 It creates a new instance of the class Agent, containing as initial position the mouse position, and also containing the new phrase pronounced by the user, the right dimension of the letters based on the speech volume and the color selected by the user.
 Moreover it sends the new data information to Firebase (with the texts.push(data) function), in order to keep track of all people’s thoughts. 
+  </li>
+  
+  <li>
+<b>How to represent each phrase: Agent class</b><br>
+One of the main points of our project was facing the challenge of writing people’s thoughts on the canvas with Perlin noise.
+In order to do so we created a new class Agent that represents the beginning of each phrase (which moves randomly at each frame) and contains the current position, the words of the entire phrase, the color, the size, and other parameters. 
+(Non so se questo codice che mostra come è fatta la classe Agent lo volete mettere, secondo me ci starebbe bene qua sotto, nel caso eccolo)
+The main method of the Agent class is update(), in which a while cycle is aimed at finding the new agents’ position at each frame (in order to print the new letter) and the distance from the previous letter.
+The angle of the movement direction at each frame is found with Perlin noise.
+Then, when the new position is sufficiently far from the last letter, the function prints the new letter on the canvas.
+  </li>
 
+  <li>
+<b>Ttile</b><br>
+  </li>
+</ol>
 
 ## Credits
 Fonts used:
