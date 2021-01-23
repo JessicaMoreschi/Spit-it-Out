@@ -123,7 +123,7 @@ Users can insert their own messages by pressing the button "Write in the diary" 
 First, it has been necessary to understand how to preserve all the sentences that users have left in the canvas. Therefore, it was necessary to store them in a server. The solution? Use "**Firebase** server". Firebase is a Google's platform that helps to develop apps in a high-quality way; it has a lot of interesting functions, such as the possibility to store data given by users and control them (for example, you can delete or modify them). <br>
 
 That's how it was introduced in the code: the  function **gotData()** is called in the **setup()** with the function **texts.once("value", gotData)**, which provides the access to the Firebase storage. Then, for each element (called "**keys**") of the database array, it creates a new "agent" (sentence that will appear in the canvas) with defined parameters for the Agent constructor (mouse position, personalized colour, text and font size) picked from Firebase's storage.
-```
+```javascript
 function gotData(data) { //load data from server
   let texts = data.val(); //The val() function returns an object.
   let keys = Object.keys(texts); // Grab the keys to iterate over the object
