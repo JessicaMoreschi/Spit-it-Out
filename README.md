@@ -169,6 +169,33 @@ For this part, it has been introduced the libray "**p5.speech**", a speech synth
 It consists of an object class (p5.SpeechRec) along with an accessor function to listen for text, change parameters such as recognition models, etc.
 
 **"Continuous"** propriety is a **boolean** to set whether the speech recognition engine will give results continuously (**true**) or just once (**false = default**); instead, the propriety "**Interim**" is a boolean that deserve to determine whether the speech recognition engine will give faster, partial results (**true**) or wait for the speaker to pause (**false = default**). Another code's feature releated to audio is that the font's size is determined by the microphone (higher the voice's volume is, bigger the font will be) and this thanks to the class **new p5.AudioIn()**, which takes the volume (it is based on the  p5.sound library).
+```
+function startMic() {
+  vol_zero = vol_map;
+//  console.log("listening");
+
+  //mic.start();
+  let continuous = false; //continue recording
+  let interim = false;
+  spoke = true;
+  speechRec.start(continuous, interim);
+  document.getElementById('panel').contentWindow.document.getElementById('micBtn').style.backgroundImage = "url('../assets/image/04.2_Mic.gif')"
+}
+```
+
+```
+function gotSpeech() {
+  if (speechRec.resultValue) {
+    let text = speechRec.resultString;
+    letters = text + ' ';
+    let phrase = document.getElementById('panel').contentWindow.document.getElementById('phrase');
+    phrase.innerHTML = "' " + speechRec.resultString + " '"
+    phrase.style.padding = '0 20px 20px 20px';
+   console.log(speechRec.resultString)
+  console.log("sono nella funzione gotspeech");
+  }
+}
+```
   </li>
   
   <li>
