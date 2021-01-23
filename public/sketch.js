@@ -80,12 +80,12 @@ function draw() {
   console.log("volume " + vol_map);
 
   // To catch the volume of the spoken phrase
-  if (vol_map > vol_zero+10){
+  if (vol_map > vol_zero+1){
     vol_text = vol_map;
     vol_zero =undefined;
   }
   console.log("vol0 " + vol_zero);
-  //console.log("vol_text " + vol_text);
+  console.log("vol_text " + vol_text);
 
   // transparent white layer in order to make the text disappear
   //fill('rgba(255,255,255, overlayAlpha)');
@@ -172,7 +172,7 @@ function startMic() {
   vol_zero = vol_map;
 //  console.log("listening");
 
-  mic.start();
+  //mic.start();
   let continuous = false; //continue recording
   let interim = false;
   spoke = true;
@@ -192,8 +192,8 @@ function gotSpeech() {
     let phrase = document.getElementById('panel').contentWindow.document.getElementById('phrase');
     phrase.innerHTML = "' " + speechRec.resultString + " '"
     phrase.style.padding = '0 20px 20px 20px';
-  //  console.log(speechRec.resultString)
-  //  console.log("sono nella funzione gotspeech");
+   console.log(speechRec.resultString)
+  console.log("sono nella funzione gotspeech");
   }
 }
 
