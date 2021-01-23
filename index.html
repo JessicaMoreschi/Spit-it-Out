@@ -202,7 +202,6 @@
       css3: true,
       onSectionload: type1()
     });
-    var sound = document.getElementById("type-sound"); //set sound
 
     //detect sections
     let prevUrl = '#firstPage';
@@ -230,6 +229,7 @@
 
     //1st page functions
     function type1() {
+      var sound = document.getElementById("type-sound"); //set sound
       sound.play(); //start sound
       //start typing
       const instance = new Typewriter('#titolo1', {
@@ -249,6 +249,7 @@
     }
     //2nd page functions
     function type2() {
+      var sound = document.getElementById("type-sound"); //set sound
       sound.play(); //start sound
       //start typing
       new Typewriter('#titolo2', {
@@ -310,6 +311,7 @@
     }
     //3rd page functions
     function type3() {
+      var sound = document.getElementById("type-sound"); //set sound
       sound.play(); //start sound
       //start typing
       new Typewriter('#titolo3', {
