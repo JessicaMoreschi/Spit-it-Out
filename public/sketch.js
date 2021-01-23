@@ -170,6 +170,7 @@ function writeOnCanvas() {
 
 function startMic() {
   vol_zero = vol_map;
+  vol_text = 10;
 //  console.log("listening");
 
   //mic.start();
