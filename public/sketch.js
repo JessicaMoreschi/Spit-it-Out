@@ -1,10 +1,3 @@
-  /**
-   * KEYS
-   * space               : new noise seed
-   * backspace           : clear screen
-   * s                   : save png
-   */
-
   let mycanvas;
   let font = 'typekaR';
   let letters = 'empty message '; //variable phrase of recording speech
@@ -130,7 +123,7 @@
   }
 
 
-  function writeOnCanvas() { //add the spoken wards to the canvas
+  function writeOnCanvas() { //add the spoken words to the canvas
     if (spoke == true) {
       let rCol = document.getElementById('panel').contentWindow.document.getElementById('slider1').value
       let gCol = document.getElementById('panel').contentWindow.document.getElementById('slider2').value
@@ -200,7 +193,7 @@
   };
 
   function windowResized() {
-    resizeCanvas(windowWidth, windowHeight / 100 * 85); 
+    resizeCanvas(windowWidth, windowHeight / 100 * 85);
   }
 
   function closePanel() {
