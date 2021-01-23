@@ -144,7 +144,7 @@ function gotData(data) { //load data from server
 Another challenge related to the previous one was to make visible the changes made by other users in real time. This means that the database must be constantly checked, but only the last element of the array must be loaded on change. <br>
 
 So, the function **texts.on("value", updateData)** have been introduced. This function does a constant check of the firebase database: each time it changes, it triggers the function **updateData()**. This function is the same of the previous one (**gotData()**): the difference is that it creates a new **agent** only for the last element of the firebase database array (it means that each time a new sentence is stored, it will appear on the everyone's canvas).
-```
+```javascript
 function updateData(data) { //update text list
   let texts = data.val();
   let keys = Object.keys(texts);
@@ -166,7 +166,7 @@ For this part, it has been introduced the libray "**p5.speech**", a speech synth
 It consists of an object class (p5.SpeechRec) along with an accessor function to listen for text, change parameters such as recognition models, etc.
 
 **"Continuous"** propriety is a **boolean** to set whether the speech recognition engine will give results continuously (**true**) or just once (**false = default**); instead, the propriety "**Interim**" is a boolean that deserve to determine whether the speech recognition engine will give faster, partial results (**true**) or wait for the speaker to pause (**false = default**). Another code's feature related to audio is that the font's size is determined by the microphone (higher the voice's volume is, bigger the font will be) and this thanks by the class **new p5.AudioIn()**, which takes the volume level (it is based on the  p5.sound library).
-```
+```javascript
 function startMic() {
   vol_zero = vol_map;
 //  console.log("listening");
@@ -180,7 +180,7 @@ function startMic() {
 }
 ```
 
-```
+```javascript
 function gotSpeech() {
   if (speechRec.resultValue) {
     let text = speechRec.resultString;
@@ -200,7 +200,7 @@ function gotSpeech() {
 <b>How to represent each phrase: Agent class</b><br>
 One of the main project's point was facing the challenge of writing people’s thoughts on the canvas with **Perlin noise**.
 In order to do so, a new **class Agent** has been created. It represents the beginning of each sentence (which moves randomly at each frame) and contains the current position, the words of the entire phrase, the color, the size, and other parameters.
-```
+```javascript
 class Agent{
   constructor(x0,y0, color, string, vol){
     this.pos = createVector(x0, y0); //current position
@@ -218,7 +218,7 @@ class Agent{
 ```
 
 The main method of the Agent class is **update()**, in which a while cycle is aimed at finding the new agents’ position at each frame (in order to print the new letter) and the distance from the previous letter. The angle of the movement direction at each frame is found with Perlin noise.
-```
+```javascript
 update(noiseScale, noiseStrength, strokeWidth) {
     // It's the method which actually prints the text
     var newLetter = this.privateLetters.charAt(this.letterIndex); //it picks the next letter to be printed
@@ -249,7 +249,7 @@ update(noiseScale, noiseStrength, strokeWidth) {
 ```
 
 Then, when the new position is sufficiently far from the last letter, the function prints the new letter on the canvas, with a translation and a rotation of the coordinate system.
-```
+```javascript
 push();
 translate(this.pos.x, this.pos.y);
 let angle = atan2(this.nextPos.y - this.pos.y, this.nextPos.x - this.pos.x);
@@ -267,7 +267,7 @@ Last but not least, there was to give a diary-look to some sentences by adding a
 
 The function **currentSection()** manage to evaluate in which website section the user is: it constantly checks the url and compares it with an if condition. After detecting the section, it calls the right function **type()** (it manages to trigger it only once by a comparison with the previous url).
 This last function creates a new element of the class **"Typewriter**" (that generates strings with a typewriter look) and provides sending the methods properties.
-```
+```javascript
     let prevUrl = '#firstPage';
     window.setInterval(function currentSection() { //set a draw() function
       let url = window.location.hash; //detect url hash
@@ -278,7 +278,7 @@ This last function creates a new element of the class **"Typewriter**" (that gen
         }
       }
  ```
- ```
+ ```javascript
      function type1() {
       sound.play(); //start sound
       //start typing
