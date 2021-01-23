@@ -64,7 +64,9 @@ function setup() {
 
   mycanvas.mousePressed(writeOnCanvas);
 
+  //gestione pannelli
   document.getElementById('panel').contentWindow.document.getElementById('arrowPanel4').addEventListener('click', closePanel) // to close panel
+  document.getElementById('imgBtInfo').addEventListener('click', function(){document.getElementById('infoPanel').style.display='block'}) // to close panel
 
 }; //end of setup
 
@@ -158,6 +160,7 @@ function writeOnCanvas() {
   phrase.style.padding= '0 0 0 0';
   }
 
+  //scomparsa pannelli
   parent.document.getElementById('panel').style.display = 'none';
   mySound.play();
 }

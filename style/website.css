@@ -159,7 +159,7 @@ input {
   cursor: pointer;
   float: none;
   margin: 0 10px 0 0;
-  padding: 0.5%;
+  padding: 0.5% 0.5% 0.5% 0.5%;
   width: 70pt;
   height: 10pt;
   background-repeat: no-repeat;
@@ -316,6 +316,19 @@ button:active {
   background-image: url("../assets/image/08.1_Bottone pieno fermo.png");
 }
 
+#imgBtInfo{
+  position: absolute;
+  margin: 0;
+  bottom: 16%;
+  right: 5%;
+  width: 10px;
+  background-image: url("../assets/image/11.1-InfoStatic.png");
+}
+
+#imgBtInfo:hover{
+  background-image: url("../assets/image/11.2-Info.gif");
+}
+
 #imgBt4{
   position: absolute;
   margin: 0;
@@ -328,7 +341,7 @@ button:active {
   z-index: 1;
 }
 
-#panel{
+#panel, #infoPanel{
   position: absolute;
   margin: 0;
   bottom: 20%;
@@ -343,6 +356,12 @@ button:active {
   outline:none
 }
 
+#infoPanel{
+  bottom: 16.5%;
+  height: 20px;
+  width: 25%;
+  display: none;
+}
 
 input[type=range] {
   width: 40pt;
