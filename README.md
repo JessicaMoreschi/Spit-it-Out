@@ -34,7 +34,7 @@ the bad and good feelings dance together.
   <img src="assets/readme/Concept.png" width="800" />
 </p>
 
-In these days it's been very hard to comuninicate between us about how we are feeling, so the site wants to be useful for all of those people who needs to speak. It' doesn't matter what exactly you want to say, the important thing is to say it.
+In these days it's been very hard to communicate between us about how we are feeling, so the site wants to be useful for all of those people who needs to speak. It' doesn't matter what exactly you want to say, the important thing is to say it.
 The aim of the project is to give voice to **deep feelings**, whatever they are. Together users
 will create an amazing and unpredictable artwork that will be shaped by the interaction of
 each other.
