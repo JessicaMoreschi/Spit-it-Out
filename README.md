@@ -126,6 +126,18 @@ Users can insert their messages by pressing the button "Write in the diary" sett
 As first thing, it had been necessary to undesrtand how to preserve all the sentences that users have left in the canvas. Therefore, it was necessary to store the data given by the users on a server. The solution? Use "**Firebase** server". Firebase is a Google's platfrom that helps to develop apps in a high-quality way; it has a lot of interesting functions, such as the possibility to store data given by users and control them (for example, you can delete or modify them). <br>
 
 That's how it was introduced in the code: the  function **gotData()** is called in the **setup()** with the function **texts.once("value", gotData)**, which provides the access to the Firebase storage. Then, For each element (called "**keys**") of the database array, it creates a new "agent" (sentence that will appear in the canvas) with defined parameters for Agent constructor (mouse position, personalized colour, text and font size) picked from Firebase's storage.
+```
+function gotData(data) { //load data from server
+  let texts = data.val(); //The val() function returns an object.
+  let keys = Object.keys(texts); // Grab the keys to iterate over the object
+  agentCount = keys.length;
+  // console.log("gotData: " + agentCount)
+  for (let i = 0; i < keys.length; i++) { //for each object
+    let userText = texts[keys[i]]; //assign his data to let userText
+    agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_text);
+  }
+}
+```
 
   </li>
   
@@ -135,6 +147,18 @@ That's how it was introduced in the code: the  function **gotData()** is called 
 Another chellenge relted to the previous one, was to make visible the changes made by other users in real time. This means that the database must be constantly checked, but only the last element of the array must be loaded on change. <br>
 
 So, the function **texts.on("value", updateData)** have been introduced. This function does a constant check of the firebase database: each time it changes, it triggers the function **updateData()**. This function is the same of the previous one (**gotData()**): the difference is that it creates a new **agent** only for the last element of the firebase database array (it means that each time a new sentence is stored, it will appear on the everyone's canvas).
+```
+function updateData(data) { //update text list
+  let texts = data.val();
+  let keys = Object.keys(texts);
+  agentCount = keys.length;
+  //  console.log("updateData: " + agentCount)
+  for (let i = keys.length - 1; i < keys.length; i++) { //select last object
+    let userText = texts[keys[i]];
+    agents[i] = new Agent(userText.xPos, userText.yPos, color(userText.rCol, userText.gCol, userText.bCol), userText.letters, userText.vol_text);
+  }
+}
+```
 
   </li>
    
