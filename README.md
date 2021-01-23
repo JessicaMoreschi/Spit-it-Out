@@ -123,22 +123,22 @@ Users can insert their messages by pressing the button "Write in the diary" sett
   <li>  
     
 <b>Preload sentences</b><br>
-• challenge:
-– Load all the sentences that users have left in the canvas 
-(the challenge was to store them in a server storage to preserve them)
-• how we solved it:
-We solved it using the Firebase server:
-–The gotData() function is called in the setup() with the  texts.once("value", gotData) function, which provides the access to the Firebase storage. 
-–For each element ("keys") of the database array, it creates a new "agent"(sentence that will appear in the canvas) with defined parameters for the Agent constructor (mouse position, personalized colour, text and font size) picked from the Firebase storage.
+As first thing, it had been necessary to undesrtand how to preserve all the sentences that users have left in the canvas. Therefore, it was necessary to store the data given by the users on a server. The solution? Use "**Firebase** server". Firebase is a Google's platfrom that helps to develop apps in a high-quality way; it has a lot of interesting functions, such as the possibility to store data given by users and control them (for example, you can delete or modify them). <br>
+That's how it was introduced in the code: the  function **gotData()** is called in the **setup()** with the function **texts.once("value", gotData)**, which provides the access to the Firebase storage. Then, For each element (called "**keys**") of the database array, it creates a new "agent" (sentence that will appear in the canvas) with defined parameters for Agent constructor (mouse position, personalized colour, text and font size) picked from Firebase's storage.
 
   </li>
   
   <li>
   
 <b>Update sentences</b> <br>
+• challenge:
+– when a user adds his own sentence, it must be seen from everyone in real time.
+– All the database must be constantly checked, but only the last element of the array must be loaded on change.
+• how we solved it:
 –The function texts.on("value", updateData) provides a constant check of the firebase database: each time it changes, it fires the updateData() function.
 – The updateData() function is the same of the previous gotData(): the difference is that it creates a new "agent" only for the last element of the firebase database array. 
 (it means that each time a new sentence is stored, it will appear on the canvas of everyone).
+
   </li>
    
   <li>
