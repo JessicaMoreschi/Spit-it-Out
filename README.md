@@ -26,7 +26,7 @@ We present you... **Spit It Out!**
 can be translated as “sputa il rospo”, “sputalo fuori”).
 
 The site is a common space that presents a diary as collaborative canvas: people will create
-a masterpiece of “**words traces**”. Step by step, the user will answer some questions
+a masterpiece of “**words traces**”. Step by step, at the user will be asked some questions
 in order to generate a “river of words”. The final result is an artwork in which all
 the bad and good feelings dance together.
 
