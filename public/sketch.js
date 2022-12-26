@@ -56,7 +56,7 @@
     mycanvas.mousePressed(writeOnCanvas);
 
     // possible action of the panel. Get element from html index
-    document.getElementById('panel').contentWindow.document.getElementById('arrowPanel4').addEventListener('click', closePanel);
+    // document.getElementById('panel').contentWindow.document.getElementById('arrowPanel4').addEventListener('click', closePanel);
     document.getElementById('imgBtInfo').addEventListener('click', function() { //info icon action
       document.getElementById('infoPanel').style.display = 'block'
     });
@@ -196,8 +196,3 @@
     resizeCanvas(windowWidth, windowHeight / 100 * 85);
   }
 
-  function closePanel() {
-    parent.document.getElementById('panel').contentWindow.document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-03-03.png');
-    parent.document.getElementById('panel').style.display = 'none';
-    //location.reload() //removed upon suggestion of professor
-  }

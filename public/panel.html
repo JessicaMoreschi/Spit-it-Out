@@ -78,16 +78,16 @@
     <!-- section0 -->
     <div class="section" id="section0">
       <!-- section0 slide1-->
-      <div class="slide" id="slide1" data-anchor="slide1">
+      <div class="slide" id="slide1">
         <div class="intro">
           <div class="testoPanel">
             <p> Follow the steps to <br><font face="typekaM">write in the diary!</font></p>
           </div>
-          <a href="#firstPage/slide2"> <input id="arrowPanel1" onclick="document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-04.png')"> </a>
+          <input id="arrowPanel1" onclick="goToSlide(1)">
         </div>
       </div>
       <!-- section0 slide2-->
-      <div class="slide" id="slide2" data-anchor="slide2">
+      <div class="slide" id="slide2">
         <div class="intro">
           <div class="testoPanel">
             <p>How did you <font face="typekaM">feel</font> <br> during the <font face="typekaM">quarantine?</font></p>
@@ -118,11 +118,11 @@
             </table>
           </div>
           <input type="button" id="sliderCol">
-          <a href="#firstPage/slide3"> <input id="arrowPanel2" onclick="document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-05.png')"> </a>
+         <input id="arrowPanel2" onclick="goToSlide(2)">
         </div>
       </div>
       <!-- section0 slide3-->
-      <div class="slide" id="slide3" data-anchor="slide3">
+      <div class="slide" id="slide3">
         <div class="intro">
           <div class="testoPanel">
             <p>
@@ -130,18 +130,18 @@
             </p>
             <div class="mic" id="micBtn"></div>
             <div class="phrase" id="phrase"></div>
-            <a href="#firstPage/slide4"> <input id="arrowPanel3" onclick="document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-06.png')"> </a>
+            <input id="arrowPanel3" onclick="goToSlide(3)"> 
           </div>
         </div>
       </div>
       <!-- section0 slide4-->
-      <div class="slide" id="slide4" data-anchor="slide4">
+      <div class="slide" id="slide4">
         <div class="intro">
           <div class="testoPanel">
             <p>Click on the <font face="typekaM">canvas</font> <br>to <font face="typekaM">write it!</font>
               </font>
             </p>
-            <a href="#firstPage/slide1"> <input id="arrowPanel4"> </a>
+             <input id="arrowPanel4" onclick="goToSlide(0)"> 
           </div>
         </div>
       </div>
@@ -154,12 +154,31 @@
   <!-- script manage sections -->
   <script type="text/javascript">
     var myFullpage = new fullpage('#fullpage', {
-      anchors: ['firstPage'],
+      // anchors: ['firstPage'],
+      anchors: ['0', '1', '2'],
       sectionsColor: ['#000000'],
       navigation: false,
       navigationPosition: 'right',
       css3: true,
       slidesNavigation: false,
+      loopHorizontal: true,
+       onSlideLeave: function (section, origin, destination, direction, trigger) { 
+        console.log (destination.index)
+        if (destination.index == 0)
+        { parent.document.getElementById('panel').style.opacity = '0',
+        parent.document.getElementById('panel').style.zIndex = '-1'}
+    }
     });
+
+
+
+    function goToSlide(b = '') {
+      if(b==1){ document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-04.png')}
+      if(b==2){ document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-05.png')}
+      if(b==3){ document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-06.png')}
+      if(b==0){ document.getElementById('avanti').setAttribute('src', '../assets/image/avanzamento-03-03.png')}
+
+    fullpage_api.moveTo('0', b);console.log(b)
+}
   </script>
 </body>
