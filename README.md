@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo/Logo_ext.png" width="300" />
+  <img src="assets/logo/Logo_ext.png" width="300" style="background-color: white"/>
 </p>
 
 ### Team members:
